@@ -86,6 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "ReliefSupply — Humanitarian Products & Field Services" },
+      { name: "twitter:title", content: "ReliefSupply — Humanitarian Products & Field Services" },
+      { name: "description", content: "Aid Connect is a modern, responsive website for humanitarian supplies and services." },
+      { property: "og:description", content: "Aid Connect is a modern, responsive website for humanitarian supplies and services." },
+      { name: "twitter:description", content: "Aid Connect is a modern, responsive website for humanitarian supplies and services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bdcd3625-f4e5-4450-b1b8-b01a6b96051a/id-preview-448dc55c--0b36f8ad-c66b-4123-b5aa-97d8b4d1f4a0.lovable.app-1781469782406.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bdcd3625-f4e5-4450-b1b8-b01a6b96051a/id-preview-448dc55c--0b36f8ad-c66b-4123-b5aa-97d8b4d1f4a0.lovable.app-1781469782406.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
