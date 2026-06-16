@@ -58,9 +58,9 @@
   --primary-foreground: oklch(0.99 0.005 260);
   --glow: oklch(0.78 0.11 250);                /* soft sky blue */
 
-  /* Secondary: calm teal #5cbdb9 */
-  --secondary: oklch(0.74 0.07 186);            /* #5cbdb9 */
-  --secondary-foreground: oklch(0.18 0.03 186);
+  /* Secondary: calm slate blue */
+  --secondary: oklch(0.93 0.01 240);
+  --secondary-foreground: oklch(0.25 0.03 240);
 
   --muted: oklch(0.94 0.01 80);
   --muted-foreground: oklch(0.50 0.02 240);

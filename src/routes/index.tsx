@@ -3,7 +3,7 @@ import { ArrowRight, ShieldCheck, Truck, Globe2, CheckCircle2 } from "lucide-rea
 import { SiteLayout } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { categories, services } from "@/lib/catalog";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero.png";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
