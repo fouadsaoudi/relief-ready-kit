@@ -12,13 +12,13 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ReliefSupply" },
+      { title: "Contact — NRM Supply" },
       {
         name: "description",
-        content: "Get in touch with ReliefSupply for humanitarian product and service inquiries.",
+        content: "Get in touch with NRM Supply for humanitarian product and service inquiries.",
       },
-      { property: "og:title", content: "Contact — ReliefSupply" },
-      { property: "og:description", content: "Email, phone, and location for ReliefSupply." },
+      { property: "og:title", content: "Contact — NRM Supply" },
+      { property: "og:description", content: "Email, phone, and location for NRM Supply." },
     ],
   }),
   component: Contact,
@@ -61,7 +61,7 @@ function Contact() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
             {[
-              { icon: Mail, label: "Email", value: "info@reliefsupply.example" },
+              { icon: Mail, label: "Email", value: "info@nrmsupply.example" },
               { icon: Phone, label: "Phone", value: "+00 000 000 0000" },
               { icon: MapPin, label: "Location", value: "Field operations worldwide" },
             ].map(({ icon: Icon, label, value }) => (

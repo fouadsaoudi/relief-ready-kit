@@ -25,7 +25,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               <HeartHandshake className="h-5 w-5" />
             </span>
             <span className="font-display text-lg font-semibold tracking-tight">
-              ReliefSupply
+              NRM Supply
             </span>
           </Link>
 
@@ -90,7 +90,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
                 <HeartHandshake className="h-5 w-5" />
               </span>
-              <span className="font-display text-lg font-semibold">ReliefSupply</span>
+              <span className="font-display text-lg font-semibold">NRM Supply</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Dependable humanitarian supplies and field services for NGOs,
@@ -129,7 +129,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>info@reliefsupply.example</span>
+                <span>info@nrmsupply.example</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
@@ -144,7 +144,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         </div>
         <div className="border-t border-border">
           <div className="mx-auto max-w-7xl px-4 py-5 text-xs text-muted-foreground sm:px-6 lg:px-8">
-            © {new Date().getFullYear()} ReliefSupply. All rights reserved.
+            © {new Date().getFullYear()} NRM Supply. All rights reserved.
           </div>
         </div>
       </footer>

@@ -6,13 +6,13 @@ import { Target, Package, Users, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — ReliefSupply" },
+      { title: "About Us — NRM Supply" },
       {
         name: "description",
         content:
-          "ReliefSupply supports humanitarian organizations with reliable relief products and field services.",
+          "NRM Supply supports humanitarian organizations with reliable relief products and field services.",
       },
-      { property: "og:title", content: "About Us — ReliefSupply" },
+      { property: "og:title", content: "About Us — NRM Supply" },
       {
         property: "og:description",
         content:

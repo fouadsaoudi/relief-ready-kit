@@ -11,13 +11,13 @@ import { QuoteForm } from "@/components/QuoteForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ReliefSupply — Humanitarian Products & Field Services" },
+      { title: "NRM Supply — Humanitarian Products & Field Services" },
       {
         name: "description",
         content:
           "Reliable humanitarian supplies and operational services for NGOs, charities, and emergency-response programs.",
       },
-      { property: "og:title", content: "ReliefSupply — Humanitarian Products & Field Services" },
+      { property: "og:title", content: "NRM Supply — Humanitarian Products & Field Services" },
       {
         property: "og:description",
         content:
@@ -136,7 +136,7 @@ function Home() {
         <div className="flex items-center justify-between text-xs uppercase tracking-[0.22em] text-muted-foreground">
           <span>Issue 01 · Field Edition</span>
           <span className="hidden sm:inline">Humanitarian Supply Quarterly</span>
-          <span>Est. ReliefSupply</span>
+          <span>Est. NRM Supply</span>
         </div>
         <div className="editorial-rule mt-4" />
       </section>
@@ -150,7 +150,7 @@ function Home() {
               Relief supplies, made for the <em className="not-italic text-primary">frontline</em>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              ReliefSupply equips NGOs, charities, and emergency teams with
+              NRM Supply equips NGOs, charities, and emergency teams with
               dependable products and operational support — anywhere, on any
               timeline.
             </p>

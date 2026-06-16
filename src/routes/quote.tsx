@@ -12,13 +12,13 @@ export const Route = createFileRoute("/quote")({
   validateSearch: zodValidator(searchSchema),
   head: () => ({
     meta: [
-      { title: "Request a Quote — ReliefSupply" },
+      { title: "Request a Quote — NRM Supply" },
       {
         name: "description",
         content:
           "Request a tailored quotation for humanitarian relief products and field services.",
       },
-      { property: "og:title", content: "Request a Quote — ReliefSupply" },
+      { property: "og:title", content: "Request a Quote — NRM Supply" },
       {
         property: "og:description",
         content:

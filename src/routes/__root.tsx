@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ReliefSupply — Humanitarian Products & Field Services" },
+      { title: "NRM Supply — Humanitarian Products & Field Services" },
       {
         name: "description",
         content:
@@ -86,8 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "ReliefSupply — Humanitarian Products & Field Services" },
-      { name: "twitter:title", content: "ReliefSupply — Humanitarian Products & Field Services" },
+      { property: "og:title", content: "NRM Supply — Humanitarian Products & Field Services" },
+      { name: "twitter:title", content: "NRM Supply — Humanitarian Products & Field Services" },
       { name: "description", content: "Aid Connect is a modern, responsive website for humanitarian supplies and services." },
       { property: "og:description", content: "Aid Connect is a modern, responsive website for humanitarian supplies and services." },
       { name: "twitter:description", content: "Aid Connect is a modern, responsive website for humanitarian supplies and services." },

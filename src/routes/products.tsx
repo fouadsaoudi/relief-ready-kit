@@ -7,13 +7,13 @@ import { categories } from "@/lib/catalog";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — ReliefSupply" },
+      { title: "Products — NRM Supply" },
       {
         name: "description",
         content:
           "Browse our humanitarian product categories: food, hygiene, MHM, dignity, kitchen, school, relief, shelter, and solar items.",
       },
-      { property: "og:title", content: "Products — ReliefSupply" },
+      { property: "og:title", content: "Products — NRM Supply" },
       {
         property: "og:description",
         content:

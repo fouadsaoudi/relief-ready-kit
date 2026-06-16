@@ -9,13 +9,13 @@ const icons = { cleaning: Sparkles, contracting: Hammer, warehousing: Warehouse 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — ReliefSupply" },
+      { title: "Services — NRM Supply" },
       {
         name: "description",
         content:
           "Cleaning, contracting, and warehousing services for humanitarian and field-based projects.",
       },
-      { property: "og:title", content: "Services — ReliefSupply" },
+      { property: "og:title", content: "Services — NRM Supply" },
       {
         property: "og:description",
         content:
