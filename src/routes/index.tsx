@@ -227,20 +227,37 @@ function Home() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
+        <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-8 lg:gap-12">
           {services.map((s, i) => (
-            <article key={s.slug} className="group">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                {String(i + 1).padStart(2, "0")} · Service
+            <article
+              key={s.slug}
+              className="group relative flex flex-col justify-between pl-6 py-2 transition-all duration-300"
+            >
+              {/* Vertical line indicator */}
+              <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-border/60" />
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300" />
+              
+              <div className="transition-transform duration-300 group-hover:translate-x-2">
+                <div className="font-display text-7xl font-extrabold tracking-tighter text-muted-foreground/15 select-none leading-none">
+                  0{i + 1}
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                  {s.name}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  {s.description}
+                </p>
               </div>
-              <h3 className="mt-3 font-display text-2xl font-semibold leading-snug">{s.name}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
-              <Link
-                to="/services"
-                className="mt-5 inline-flex items-center text-sm font-semibold text-primary"
-              >
-                Read more <ArrowRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5" />
-              </Link>
+
+              <div className="mt-8 transition-transform duration-300 group-hover:translate-x-2">
+                <Link
+                  to="/services"
+                  className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary group-hover:text-accent transition-colors duration-300"
+                >
+                  Explore Service
+                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
             </article>
           ))}
         </div>
