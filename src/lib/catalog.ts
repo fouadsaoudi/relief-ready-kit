@@ -132,6 +132,25 @@ export const categories: Category[] = [
     ],
   },
   {
+    slug: "shelter-items",
+    name: "Shelter Items",
+    description:
+      "Shelter solutions and materials for emergency response, field operations, and temporary structures.",
+    icon: Tent,
+    items: [
+      "Standard family tent",
+      "Multipurpose tent",
+      "Warehouse tent",
+      "Tarpaulin 4×6",
+      "Tarpaulin 4×5",
+    ],
+    specs: [
+      { label: "Family tent", value: "Poly-cotton, area 23 m²" },
+      { label: "Multipurpose tent", value: "Polyethylene, 24 / 48 / 72 m²" },
+      { label: "Warehouse tent", value: "PVC material, 240 m² and 360 m²" },
+    ],
+  },
+  {
     slug: "school-kits",
     name: "School Kits",
     description:
@@ -171,25 +190,6 @@ export const categories: Category[] = [
       { label: "Medium thermal blanket", value: "1.5×2 m, ~1.5 kg" },
       { label: "2-ply blanket", value: "1.6×2 m, ~1.8 kg" },
       { label: "Pillow", value: "50×70 cm" },
-    ],
-  },
-  {
-    slug: "shelter-items",
-    name: "Shelter Items",
-    description:
-      "Shelter solutions and materials for emergency response, field operations, and temporary structures.",
-    icon: Tent,
-    items: [
-      "Standard family tent",
-      "Multipurpose tent",
-      "Warehouse tent",
-      "Tarpaulin 4×6",
-      "Tarpaulin 4×5",
-    ],
-    specs: [
-      { label: "Family tent", value: "Poly-cotton, area 23 m²" },
-      { label: "Multipurpose tent", value: "Polyethylene, 24 / 48 / 72 m²" },
-      { label: "Warehouse tent", value: "PVC material, 240 m² and 360 m²" },
     ],
   },
   {
