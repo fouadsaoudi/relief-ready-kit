@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const featured = categories[0];
-  const rest = categories.slice(1, 7);
+  const rest = categories.slice(1);
 
   return (
     <SiteLayout>
@@ -148,14 +148,14 @@ function Home() {
         </div>
       </section>
 
-      {/* Products — magazine featured + grid */}
+      {/* Products — refined editorial grid */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
-          <div className="max-w-2xl">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 sm:flex sm:flex-wrap sm:items-end sm:justify-between">
+          <div className="min-w-0">
             <span className="tag-pill">Catalog</span>
             <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">Product Categories</h2>
           </div>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="shrink-0">
             <Link to="/products">View all products</Link>
           </Button>
         </div>
@@ -163,19 +163,19 @@ function Home() {
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
           {/* Featured */}
           {featured ? (
-            <article className="feature-card lg:col-span-5 lg:row-span-2">
-              <div className="flex h-full flex-col p-7">
-                <span className="grid h-12 w-12 place-items-center rounded-lg bg-accent/15 text-accent">
-                  <featured.icon className="h-6 w-6" />
+            <article className="feature-card lg:col-span-5">
+              <div className="flex h-full flex-col p-7 md:p-10">
+                <span className="grid h-14 w-14 place-items-center rounded-xl bg-accent/15 text-accent">
+                  <featured.icon className="h-7 w-7" />
                 </span>
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                <p className="mt-8 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Featured category
                 </p>
-                <h3 className="mt-3 font-display text-3xl font-semibold">{featured.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <h3 className="mt-3 font-display text-3xl font-semibold md:text-4xl">{featured.name}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   {featured.description}
                 </p>
-                <div className="mt-auto flex gap-2 pt-8">
+                <div className="mt-auto flex flex-wrap gap-3 pt-10">
                   <Button asChild size="sm" variant="secondary">
                     <Link to="/products" hash={featured.slug}>View Details</Link>
                   </Button>
@@ -192,16 +192,20 @@ function Home() {
             {rest.map((c) => {
               const Icon = c.icon;
               return (
-                <article key={c.slug} className="feature-card flex flex-col p-5">
+                <article key={c.slug} className="feature-card flex flex-col p-5 md:p-6">
                   <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/12 text-primary">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold">{c.name}</h3>
+                  <h3 className="mt-5 font-display text-lg font-semibold">{c.name}</h3>
                   <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{c.description}</p>
-                  <div className="mt-4 flex gap-2 pt-2">
-                    <Button asChild size="sm" variant="ghost">
-                      <Link to="/products" hash={c.slug}>Details</Link>
-                    </Button>
+                  <div className="mt-auto flex items-center justify-between gap-2 pt-6">
+                    <Link
+                      to="/products"
+                      hash={c.slug}
+                      className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      Details
+                    </Link>
                     <Button asChild size="sm">
                       <Link to="/quote" search={{ category: c.slug }}>Quote</Link>
                     </Button>
