@@ -54,7 +54,7 @@
   --popover-foreground: oklch(0.22 0.03 240);
 
   /* Primary: humanitarian blue #0384e5 */
-  --primary: oklch(0.61 0.15 261);             /* #0384e5 */
+  --primary: #f37024;             /* #0384e5 */
   --primary-foreground: oklch(0.99 0.005 260);
   --glow: oklch(0.78 0.11 250);                /* soft sky blue */
 
@@ -66,7 +66,7 @@
   --muted-foreground: oklch(0.50 0.02 240);
 
   /* Accent: deeper teal for emphasis */
-  --accent: oklch(0.55 0.08 186);              /* deep teal */
+  --accent: oklch(0.22 0.03 241.73);              /* deep teal */
   --accent-foreground: oklch(0.99 0.005 186);
 
   --destructive: oklch(0.55 0.2 27);

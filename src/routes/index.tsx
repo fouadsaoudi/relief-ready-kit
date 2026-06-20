@@ -131,16 +131,6 @@ function Home() {
 
   return (
     <SiteLayout>
-      {/* Magazine masthead */}
-      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between text-xs uppercase tracking-[0.22em] text-muted-foreground">
-          <span>Issue 01 · Field Edition</span>
-          <span className="hidden sm:inline">Humanitarian Supply Quarterly</span>
-          <span>Est. NRM Supply</span>
-        </div>
-        <div className="editorial-rule mt-4" />
-      </section>
-
       {/* Hero — editorial asymmetric */}
       <section className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12 md:gap-12">
@@ -158,7 +148,7 @@ function Home() {
               <Button size="lg" onClick={() => openQuote("")}>
                 Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="border-0">
                 <Link to="/products">Explore Products</Link>
               </Button>
             </div>
@@ -236,7 +226,7 @@ function Home() {
               {/* Vertical line indicator */}
               <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-border/60" />
               <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300" />
-              
+
               <div className="transition-transform duration-300 group-hover:translate-x-2">
                 <div className="font-display text-7xl font-extrabold tracking-tighter text-muted-foreground/15 select-none leading-none">
                   0{i + 1}
