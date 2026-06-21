@@ -50,7 +50,7 @@ const categoryStyles: Record<string, {
     glow: "shadow-amber-500/5 hover:shadow-amber-500/10",
     iconBg: "bg-amber-500/10",
     iconColor: "text-amber-600",
-    span: "lg:col-span-2 md:col-span-2",
+    span: "lg:col-span-1",
   },
   "hygiene-kits": {
     accent: "text-teal-600 dark:text-teal-400",

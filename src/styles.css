@@ -61,6 +61,8 @@
   /* Secondary: calm slate blue */
   --secondary: oklch(0.93 0.01 240);
   --secondary-foreground: oklch(0.25 0.03 240);
+  /* --navy: #0b1b3d; */
+  --navy: #1b3368;
 
   --muted: oklch(0.94 0.01 80);
   --muted-foreground: oklch(0.50 0.02 240);
@@ -88,12 +90,12 @@
 
   body {
     background-color: var(--color-background);
-    color: var(--color-foreground);
+    color: var(--navy);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 70% 45% at 0% 0%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 10%, color-mix(in oklab, var(--secondary) 12%, transparent), transparent 60%);
+      radial-gradient(ellipse 70% 45% at 0% 0%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 10%, color-mix(in oklab, var(--navy) 10%, transparent), transparent 60%);
     background-attachment: fixed;
   }
 
