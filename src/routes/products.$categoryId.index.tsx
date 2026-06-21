@@ -8,6 +8,21 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { ChevronLeft, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/products/$categoryId/")({
+  head: ({ params }) => {
+    const category = categories.find((c) => c.slug === params.categoryId);
+    const title = category ? `${category.name} — NRM Supply` : "Products — NRM Supply";
+    const description = category
+      ? category.description
+      : "Browse NRM Supply bulk supplies and custom kit assemblies.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+      ],
+    };
+  },
   component: CategoryProducts,
 });
 

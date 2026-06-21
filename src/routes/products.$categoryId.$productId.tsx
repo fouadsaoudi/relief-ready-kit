@@ -8,6 +8,36 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle2, ChevronLeft, ArrowRight, ShieldCheck, Info } from "lucide-react";
 
 export const Route = createFileRoute("/products/$categoryId/$productId")({
+  head: ({ params }) => {
+    const category = categories.find((c) => c.slug === params.categoryId);
+    let matchedProduct: any = null;
+    if (category) {
+      if (category.slug === params.productId) {
+        matchedProduct = {
+          name: category.name,
+          description: category.description,
+        };
+      } else if (category.products) {
+        matchedProduct = category.products.find((p) => p.slug === params.productId);
+      }
+    }
+
+    const title = matchedProduct
+      ? `${matchedProduct.name} — NRM Supply`
+      : "Product Detail — NRM Supply";
+    const description = matchedProduct
+      ? matchedProduct.description
+      : "Browse details for our high-quality bulk supplies and field services.";
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+      ],
+    };
+  },
   component: ProductItemDetail,
 });
 
