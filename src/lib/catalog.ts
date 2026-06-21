@@ -68,6 +68,7 @@ export const categories: Category[] = [
       {
         slug: "food-kit",
         name: "Food Kit",
+        image: "/food/food-kit.png",
         description: "Dry food ration parcel containing essential cooking staples designed to sustain a family for one month.",
         items: [
           "Rice",
@@ -91,6 +92,7 @@ export const categories: Category[] = [
       {
         slug: "ready-to-eat-food-kit",
         name: "Ready to Eat Food Kit",
+        image: "/food/ready-to-eat-kit.png",
         description: "Immediate response food parcel containing cooked canned items and snacks requiring no water or cooking facilities.",
         items: [
           "Canned beans",
@@ -111,6 +113,7 @@ export const categories: Category[] = [
       {
         slug: "high-energy-biscuit",
         name: "High Energy Biscuit",
+        image: "/food/high-energy-biscuit.png",
         description: "Fortified wheat-based biscuits designed for immediate energy replenishment and nutritional support during crises.",
         items: [
           "High-energy wheat biscuits",
@@ -157,6 +160,7 @@ export const categories: Category[] = [
       {
         slug: "hygiene-kit",
         name: "Hygiene Kit",
+        image: "/wash/hygiene-kit.png",
         description: "Standard assembly of personal and household hygiene supplies for emergency relief programs.",
         items: [
           "Bath soap",
@@ -181,6 +185,7 @@ export const categories: Category[] = [
       {
         slug: "mhm-kit",
         name: "MHM Kit",
+        image: "/wash/mhm-kit.png",
         description: "Menstrual Hygiene Management kit prepared with personal and health support products for women and girls.",
         items: [
           "Reusable sanitary pads",
@@ -201,6 +206,7 @@ export const categories: Category[] = [
       {
         slug: "dignity-kit",
         name: "Dignity Kit",
+        image: "/wash/dignity-kit.png",
         description: "Dignity kit containing essential personal care, hygiene, and safety protection items for vulnerable individuals.",
         items: [
           "Reusable sanitary pads",
@@ -266,6 +272,7 @@ export const categories: Category[] = [
       {
         slug: "kitchen-set",
         name: "Kitchen Set",
+        image: "/relief/kitchen-set.png",
         description: "Practical cooking and serving utensils designed for families in displacement or emergency housing.",
         items: [
           "Cooking pot with lid (large)",
@@ -288,6 +295,7 @@ export const categories: Category[] = [
       {
         slug: "school-kit",
         name: "School Kit",
+        image: "/relief/school-kit.jpg",
         description: "Essential educational and classroom supplies to support children's continued learning during recovery.",
         items: [
           "School backpack",
@@ -311,6 +319,7 @@ export const categories: Category[] = [
       {
         slug: "shelter-tool-kit",
         name: "Shelter Tool Kit",
+        image: "/relief/shelter-tool-kit.jpg",
         description: "A comprehensive set of tools for minor shelter repairs, temporary structure construction, and reinforcement.",
         items: [
           "ROPE, polypropylene, black",
@@ -519,6 +528,7 @@ export const categories: Category[] = [
       {
         slug: "solar-power-kits",
         name: "Solar Power Kits",
+        image: "/solar/solar-power-kit.jpg",
         description: "Portable solar arrays and battery units to provide clean energy in off-grid field environments.",
         items: [
           "Deep-cycle solar batteries",
@@ -532,6 +542,7 @@ export const categories: Category[] = [
       {
         slug: "solar-lighting",
         name: "Solar Lighting",
+        image: "/solar/solar-lighting.jpg",
         description: "Rechargeable solar lanterns and torch lights for personal safety and lighting pathways.",
         items: [
           "Solar torch light",

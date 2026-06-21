@@ -140,7 +140,7 @@ function Home() {
         </div>
 
         <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {categories.map((c) => {
+          {categories.slice(0, 4).map((c) => {
             const Icon = c.icon;
             const kitCount = c.products ? c.products.length : 0;
             return (
@@ -170,6 +170,35 @@ function Home() {
               </Link>
             );
           })}
+
+          {/* "+ More" Link Card */}
+          {categories.length > 4 && (
+            <Link
+              to="/products"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-dashed border-border bg-muted/20 p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40 hover:bg-card"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              
+              <div className="relative flex-1 flex flex-col justify-center items-center text-center py-4">
+                <span className="text-4xl font-extrabold tracking-tighter text-primary/70 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  +{categories.length - 4}
+                </span>
+                <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                  More Categories
+                </h3>
+                <p className="mt-1 text-[11px] text-muted-foreground max-w-[150px] leading-relaxed">
+                  Explore shelter items, solar products, and more.
+                </p>
+              </div>
+
+              <div className="relative mt-4 flex items-center justify-between border-t border-border/40 pt-3">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/60">
+                  View Full Catalog
+                </span>
+                <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/45 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
+              </div>
+            </Link>
+          )}
         </div>
       </section>
 

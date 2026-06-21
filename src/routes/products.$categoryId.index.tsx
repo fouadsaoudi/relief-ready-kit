@@ -219,7 +219,7 @@ function CategoryProducts() {
             return (
               <article
                 key={p.slug}
-                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-border/80 bg-card p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${style.border} ${style.glow}`}
+                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-border/80 bg-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${style.border} ${style.glow}`}
               >
                 {/* Overlay link for clicking the entire card */}
                 <Link
@@ -229,44 +229,61 @@ function CategoryProducts() {
                   aria-label={`View ${p.name} details`}
                 />
 
-                <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${style.bg}`} />
+                <div className={`absolute -inset-px rounded-3xl bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${style.bg}`} />
 
                 <div className="relative flex h-full flex-col justify-between">
                   <div>
-                    <h3 className="font-display font-semibold transition-colors duration-300 group-hover:text-foreground text-xl">
-                      {p.name}
-                    </h3>
-                    <p className="mt-3 text-muted-foreground text-sm leading-relaxed line-clamp-3">
-                      {p.description}
-                    </p>
+                    {(() => {
+                      const productImage = p.image || (p.subProducts && p.subProducts.length > 0 ? p.subProducts[0].image : null);
+                      if (!productImage) return null;
+                      return (
+                        <div className="relative w-full aspect-[3/2] overflow-hidden border-b border-border/30 bg-muted/40">
+                          <img
+                            src={productImage}
+                            alt={p.name}
+                            className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        </div>
+                      );
+                    })()}
 
-                    <div className="mt-6">
-                      <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60 mb-2">
-                        Included Items
+                    <div className="p-6">
+                      <h3 className="font-display font-bold text-foreground text-2xl tracking-tight transition-colors duration-300 group-hover:text-primary">
+                        {p.name}
+                      </h3>
+                      <p className="mt-3 text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                        {p.description}
                       </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {p.items.slice(0, 6).map((item) => (
-                          <span
-                            key={item}
-                            className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground/80 border border-border/40 transition-colors duration-300 group-hover:bg-background group-hover:text-foreground"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                        {p.items.length > 6 && (
-                          <span className="inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground/50">
-                            +{p.items.length - 6} more
-                          </span>
-                        )}
+
+                      <div className="mt-6">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/60 mb-2">
+                          Included Items
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {p.items.slice(0, 6).map((item) => (
+                            <span
+                              key={item}
+                              className="inline-flex items-center rounded-full bg-muted/40 px-3 py-1 text-[11px] font-medium text-foreground/80 border border-border/50 transition-colors duration-300 group-hover:bg-background group-hover:text-foreground"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                          {p.items.length > 6 && (
+                            <span className="inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-semibold text-muted-foreground/50 bg-muted/10">
+                              +{p.items.length - 6} more
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8 flex items-center justify-between gap-4 border-t border-border/50 pt-5">
+                  <div className="relative z-20 flex items-center justify-between border-t border-border/50 px-6 py-4 bg-muted/5">
                     <Link
                       to="/products/$categoryId/$productId"
                       params={{ categoryId: category.slug, productId: p.slug }}
-                      className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors group/link relative z-20"
+                      className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors group/link"
                     >
                       Details
                       <ArrowRight className="ml-1 h-3.5 w-3.5 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
@@ -278,7 +295,7 @@ function CategoryProducts() {
                         e.stopPropagation();
                         openQuote(p.slug);
                       }}
-                      className="relative z-20"
+                      className="rounded-xl px-4 py-1.5 font-semibold text-xs border border-border/40 hover:bg-secondary/20 transition-all shadow-sm"
                     >
                       Quote
                     </Button>

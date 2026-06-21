@@ -200,20 +200,7 @@ function Services() {
                     ))}
                   </ul>
 
-                  <div className="mt-8 rounded-2xl bg-secondary/40 border border-border/40 p-6">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/80 flex items-center gap-2 mb-4">
-                      <Clock className="h-4 w-4 text-primary" /> Service Specifications
-                    </h4>
-                    
-                    <dl className="grid gap-4 text-sm">
-                      {detail.specs.map((spec) => (
-                        <div key={spec.label} className="grid sm:grid-cols-[110px_1fr] gap-1.5 sm:gap-4 border-b border-border/30 pb-2 last:border-0 last:pb-0">
-                          <dt className="font-semibold text-foreground/80">{spec.label}</dt>
-                          <dd className="text-muted-foreground leading-relaxed">{spec.value}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
+
                 </div>
               </div>
             </article>

@@ -70,8 +70,7 @@ function Contact() {
           <div className="space-y-4">
             {[
               { icon: Mail, label: "Email", value: "info@nrmsupply.example" },
-              { icon: Phone, label: "Phone", value: "+00 000 000 0000" },
-              { icon: MapPin, label: "Location", value: "Field operations worldwide" },
+              { icon: Phone, label: "Phone", value: "+961 70 616 333" },
             ].map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
@@ -81,16 +80,20 @@ function Contact() {
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">
                     {label}
                   </p>
-                  <p className="mt-1 truncate font-medium">{value}</p>
+                  {label === "Email" ? (
+                    <a href={`mailto:${value}`} className="block mt-1 truncate font-medium hover:text-primary transition-colors">
+                      {value}
+                    </a>
+                  ) : label === "Phone" ? (
+                    <a href="tel:+96170616333" className="block mt-1 truncate font-medium hover:text-primary transition-colors">
+                      {value}
+                    </a>
+                  ) : (
+                    <p className="mt-1 truncate font-medium">{value}</p>
+                  )}
                 </div>
               </div>
             ))}
-
-            <div className="overflow-hidden rounded-2xl border border-border bg-secondary/40 aspect-[16/10]">
-              <div className="grid h-full place-items-center text-sm text-muted-foreground">
-                Map placeholder
-              </div>
-            </div>
           </div>
 
           <form
