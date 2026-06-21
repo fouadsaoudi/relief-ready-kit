@@ -136,7 +136,7 @@ function Products() {
           Products
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed font-light">
-          Explore our range of essential supplies, custom kits, and field products. Click on any category to view specific items and custom configurations.
+          Explore NRM Supply's catalog of high-quality products, essential bulk supplies, and custom configurations. Click on any category to view specific items and technical specifications.
         </p>
       </section>
 

@@ -54,8 +54,7 @@ function Contact() {
         <span className="text-sm font-medium text-primary">Contact</span>
         <h1 className="mt-3 text-4xl font-semibold md:text-5xl">Get in touch</h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          We typically respond within one business day. For urgent operational
-          requests, please call us directly.
+          Get in touch with NRM Supply. Contact us directly for general, B2B, or humanitarian inquiries. We typically respond within one business day.
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">

@@ -62,7 +62,7 @@ function Home() {
               Dependable bulk supplies & field services, built for <span className="text-primary">performance</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 font-light">
-              NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations, anywhere, on any timeline.
+              NRM Supply provides dependable bulk supplies, custom kit assemblies, and operational field services, built for high performance. As a global sourcing partner, we deliver critical relief supplies and B2B procurement solutions anywhere, on any timeline.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" onClick={() => openQuote("")} className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold">

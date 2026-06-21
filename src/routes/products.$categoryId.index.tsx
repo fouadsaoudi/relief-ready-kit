@@ -182,7 +182,7 @@ function CategoryProducts() {
           <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">{category.name}</h1>
         </div>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">
-          {category.description}
+          NRM Supply offers {category.name.toLowerCase()} for global field operations and B2B sourcing. {category.description}
         </p>
       </section>
 

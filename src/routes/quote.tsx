@@ -38,7 +38,7 @@ function Quote() {
         <span className="text-sm font-medium text-primary">Quotation</span>
         <h1 className="mt-3 text-4xl font-semibold md:text-5xl">Request a Quote</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Share your requirements and our team will prepare a tailored quotation.
+          Request a quote from NRM Supply. Share your requirements and our team will prepare a tailored quotation for bulk supplies or operational field services.
         </p>
 
         <div className="mt-10 rounded-3xl border border-border bg-card p-6 sm:p-8">

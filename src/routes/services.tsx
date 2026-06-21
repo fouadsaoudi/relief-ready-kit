@@ -113,7 +113,7 @@ function Services() {
           Operational Field Services
         </h1>
         <p className="mt-6 max-w-3xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-          We complement our physical humanitarian supplies with professional, field-proven operational services to support base camps, emergency shelters, and logistics centers worldwide.
+          NRM Supply complements physical supplies with professional, field-proven operational services to support base camps, emergency shelters, and logistics centers worldwide.
         </p>
 
         {/* Quick Nav Anchors */}

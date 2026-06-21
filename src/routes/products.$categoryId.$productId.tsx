@@ -111,7 +111,7 @@ function ProductItemDetail() {
             {matchedProduct.name}
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
-            {matchedProduct.description}
+            NRM Supply offers {matchedProduct.name.toLowerCase()} as part of our premium field kits and bulk supplies catalog. {matchedProduct.description}
           </p>
         </div>
       </section>
