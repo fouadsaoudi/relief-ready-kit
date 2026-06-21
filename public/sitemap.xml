@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Static Pages -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/about</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/services</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/quote</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/contact</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Categories -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/food-items</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/hygiene-kits</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/shelter-items</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/solar-products</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Product Details -->
+  <!-- Food Items -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/food-items/food-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/food-items/ready-to-eat-food-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/food-items/high-energy-biscuit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Hygiene Kits -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/hygiene-kits/hygiene-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/hygiene-kits/mhm-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/hygiene-kits/dignity-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Relief Items -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/kitchen-set</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/school-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/shelter-tool-kit</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/mattress</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/synthetic-sleeping-mat</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/medium-thermal-blanket</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/two-ply-blanket</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/relief-items/pillow</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Shelter Items -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/shelter-items/humanitarian-tents</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/shelter-items/reinforced-tarpaulins</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Solar Products -->
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/solar-products/solar-power-kits</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://relief-ready-kit.vercel.app/products/solar-products/solar-lighting</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

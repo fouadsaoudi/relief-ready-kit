@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://relief-ready-kit.vercel.app/sitemap.xml
