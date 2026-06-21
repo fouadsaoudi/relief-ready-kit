@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Truck, Globe2, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
-import { services } from "@/lib/catalog";
+import { services, categories } from "@/lib/catalog";
 import heroImg from "@/assets/hero.png";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -110,6 +110,60 @@ function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Product Summary Showcase */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-secondary/15 rounded-3xl border border-border/40 p-8 sm:p-10 mb-20 relative overflow-hidden">
+        {/* Subtle decorative glows */}
+        <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+        <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+
+        <div className="relative flex flex-wrap items-end justify-between gap-6 border-b border-border/50 pb-6 mb-10">
+          <div className="max-w-2xl">
+            <span className="tag-pill">Emergency Response Supplies</span>
+            <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">
+              Core Products
+            </h2>
+          </div>
+          <Button asChild variant="outline" className="border-primary/20 hover:bg-primary/5 hover:text-primary">
+            <Link to="/products">
+              View Full Catalog <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+
+        <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {categories.map((c) => {
+            const Icon = c.icon;
+            const kitCount = c.products ? c.products.length : 0;
+            return (
+              <Link
+                key={c.slug}
+                to="/products/$categoryId"
+                params={{ categoryId: c.slug }}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30"
+              >
+                <div>
+                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/8 text-primary transition-all duration-300 group-hover:scale-110">
+                    <Icon className="h-5.5 w-5.5" />
+                  </span>
+                  <h3 className="mt-4 font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {c.name}
+                  </h3>
+                  <p className="mt-2 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                    {c.description}
+                  </p>
+                </div>
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">
+                    {kitCount > 0 ? `${kitCount} Specialized Kits` : "Custom Ranges"}
+                  </span>
+                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/45 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
