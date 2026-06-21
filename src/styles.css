@@ -42,7 +42,7 @@
   --radius: 0.75rem;
 
   /* Humanitarian Blue & Cream — calm, trustworthy, clean */
-  --background: oklch(0.98 0.008 80);          /* warm cream white */
+  --background: oklch(100% 0.00011 271.152);          /* warm cream white */
   --foreground: oklch(0.22 0.03 240);         /* deep cool slate */
 
   --surface: oklch(0.96 0.012 80);

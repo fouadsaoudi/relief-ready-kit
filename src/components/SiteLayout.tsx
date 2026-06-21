@@ -54,8 +54,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                             return (
                               <Link
                                 key={c.slug}
-                                to="/products"
-                                hash={c.slug}
+                                to="/products/$categoryId"
+                                params={{ categoryId: c.slug }}
                                 className="group/item flex items-center justify-between gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-secondary/60"
                               >
                                 <div className="flex items-start gap-3 min-w-0 flex-1">

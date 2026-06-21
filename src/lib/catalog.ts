@@ -11,6 +11,14 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+export type Product = {
+  slug: string;
+  name: string;
+  description: string;
+  items: string[];
+  specs?: { label: string; value: string }[];
+};
+
 export type Category = {
   slug: string;
   name: string;
@@ -18,6 +26,7 @@ export type Category = {
   icon: LucideIcon;
   items: string[];
   specs?: { label: string; value: string }[];
+  products?: Product[];
 };
 
 export const categories: Category[] = [
@@ -28,8 +37,6 @@ export const categories: Category[] = [
       "Essential food supplies and ready-to-distribute food packages for emergency and relief programs.",
     icon: Apple,
     items: [
-      "Ready-to-eat meals",
-      "High-energy biscuits",
       "Rice",
       "Bulgur",
       "Pasta",
@@ -49,6 +56,67 @@ export const categories: Category[] = [
       "Dates",
       "Juice",
       "Water",
+      "High-energy biscuits",
+    ],
+    products: [
+      {
+        slug: "food-kit",
+        name: "Food Kit",
+        description: "Dry food ration parcel containing essential cooking staples designed to sustain a family for one month.",
+        items: [
+          "Rice",
+          "Bulgur",
+          "Pasta",
+          "Lentils",
+          "Chickpeas",
+          "White beans",
+          "Vegetable oil",
+          "Sunflower Oil",
+          "Sugar",
+          "Salt",
+          "Tomato paste",
+        ],
+        specs: [
+          { label: "Weight", value: "Approx. 25-30 kg" },
+          { label: "Packaging", value: "Heavy-duty cardboard box / woven sack" },
+          { label: "Shelf Life", value: "12-18 months" },
+        ],
+      },
+      {
+        slug: "ready-to-eat-food-kit",
+        name: "Ready to Eat Food Kit",
+        description: "Immediate response food parcel containing cooked canned items and snacks requiring no water or cooking facilities.",
+        items: [
+          "Canned beans",
+          "Canned meat",
+          "Tuna",
+          "Biscuits",
+          "Energy bars",
+          "Dates",
+          "Juice",
+          "Water",
+        ],
+        specs: [
+          { label: "Weight", value: "Approx. 8-10 kg" },
+          { label: "Packaging", value: "Sealed box with easy-open cans" },
+          { label: "Shelf Life", value: "24 months" },
+        ],
+      },
+      {
+        slug: "high-energy-biscuit",
+        name: "High Energy Biscuit",
+        description: "Fortified wheat-based biscuits designed for immediate energy replenishment and nutritional support during crises.",
+        items: [
+          "High-energy wheat biscuits",
+          "Fortified vitamins (A, B1, B2, C, D, E)",
+          "Minerals (Iron, Calcium, Zinc)",
+        ],
+        specs: [
+          { label: "Weight", value: "100g per pack (approx. 450 kcal)" },
+          { label: "Packaging", value: "Vacuum sealed foil packs" },
+          { label: "Shelf Life", value: "24-36 months" },
+        ],
+      },
     ],
   },
   {

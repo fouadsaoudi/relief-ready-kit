@@ -104,11 +104,27 @@ export function QuoteForm({ defaultCategory = "", onSuccess }: QuoteFormProps) {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="general">General inquiry</SelectItem>
-              {categories.map((c) => (
-                <SelectItem key={c.slug} value={c.slug}>
-                  {c.name}
-                </SelectItem>
-              ))}
+              {categories.map((c) => {
+                if (c.products && c.products.length > 0) {
+                  return (
+                    <div key={c.slug} className="py-1">
+                      <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/50 select-none">
+                        {c.name}
+                      </div>
+                      {c.products.map((p) => (
+                        <SelectItem key={p.slug} value={p.slug}>
+                          {p.name}
+                        </SelectItem>
+                      ))}
+                    </div>
+                  );
+                }
+                return (
+                  <SelectItem key={c.slug} value={c.slug}>
+                    {c.name}
+                  </SelectItem>
+                );
+              })}
               {services.map((s) => (
                 <SelectItem key={s.slug} value={s.slug}>
                   {s.name}

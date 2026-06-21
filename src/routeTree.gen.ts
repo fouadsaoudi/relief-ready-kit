@@ -15,6 +15,10 @@ import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsCategoryIdRouteImport } from './routes/products.$categoryId'
+import { Route as ProductsCategoryIdIndexRouteImport } from './routes/products.$categoryId.index'
+import { Route as ProductsCategoryIdProductIdRouteImport } from './routes/products.$categoryId.$productId'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -46,37 +50,86 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsCategoryIdRoute = ProductsCategoryIdRouteImport.update({
+  id: '/$categoryId',
+  path: '/$categoryId',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsCategoryIdIndexRoute = ProductsCategoryIdIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProductsCategoryIdRoute,
+} as any)
+const ProductsCategoryIdProductIdRoute =
+  ProductsCategoryIdProductIdRouteImport.update({
+    id: '/$productId',
+    path: '/$productId',
+    getParentRoute: () => ProductsCategoryIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/products': typeof ProductsRoute
+  '/products': typeof ProductsRouteWithChildren
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
+  '/products/$categoryId': typeof ProductsCategoryIdRouteWithChildren
+  '/products/': typeof ProductsIndexRoute
+  '/products/$categoryId/$productId': typeof ProductsCategoryIdProductIdRoute
+  '/products/$categoryId/': typeof ProductsCategoryIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/products': typeof ProductsRoute
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
+  '/products': typeof ProductsIndexRoute
+  '/products/$categoryId/$productId': typeof ProductsCategoryIdProductIdRoute
+  '/products/$categoryId': typeof ProductsCategoryIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/products': typeof ProductsRoute
+  '/products': typeof ProductsRouteWithChildren
   '/quote': typeof QuoteRoute
   '/services': typeof ServicesRoute
+  '/products/$categoryId': typeof ProductsCategoryIdRouteWithChildren
+  '/products/': typeof ProductsIndexRoute
+  '/products/$categoryId/$productId': typeof ProductsCategoryIdProductIdRoute
+  '/products/$categoryId/': typeof ProductsCategoryIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/products' | '/quote' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/products'
+    | '/quote'
+    | '/services'
+    | '/products/$categoryId'
+    | '/products/'
+    | '/products/$categoryId/$productId'
+    | '/products/$categoryId/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/products' | '/quote' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/quote'
+    | '/services'
+    | '/products'
+    | '/products/$categoryId/$productId'
+    | '/products/$categoryId'
   id:
     | '__root__'
     | '/'
@@ -85,13 +138,17 @@ export interface FileRouteTypes {
     | '/products'
     | '/quote'
     | '/services'
+    | '/products/$categoryId'
+    | '/products/'
+    | '/products/$categoryId/$productId'
+    | '/products/$categoryId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  ProductsRoute: typeof ProductsRoute
+  ProductsRoute: typeof ProductsRouteWithChildren
   QuoteRoute: typeof QuoteRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -140,14 +197,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/': {
+      id: '/products/'
+      path: '/'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/$categoryId': {
+      id: '/products/$categoryId'
+      path: '/$categoryId'
+      fullPath: '/products/$categoryId'
+      preLoaderRoute: typeof ProductsCategoryIdRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/$categoryId/': {
+      id: '/products/$categoryId/'
+      path: '/'
+      fullPath: '/products/$categoryId/'
+      preLoaderRoute: typeof ProductsCategoryIdIndexRouteImport
+      parentRoute: typeof ProductsCategoryIdRoute
+    }
+    '/products/$categoryId/$productId': {
+      id: '/products/$categoryId/$productId'
+      path: '/$productId'
+      fullPath: '/products/$categoryId/$productId'
+      preLoaderRoute: typeof ProductsCategoryIdProductIdRouteImport
+      parentRoute: typeof ProductsCategoryIdRoute
+    }
   }
 }
+
+interface ProductsCategoryIdRouteChildren {
+  ProductsCategoryIdProductIdRoute: typeof ProductsCategoryIdProductIdRoute
+  ProductsCategoryIdIndexRoute: typeof ProductsCategoryIdIndexRoute
+}
+
+const ProductsCategoryIdRouteChildren: ProductsCategoryIdRouteChildren = {
+  ProductsCategoryIdProductIdRoute: ProductsCategoryIdProductIdRoute,
+  ProductsCategoryIdIndexRoute: ProductsCategoryIdIndexRoute,
+}
+
+const ProductsCategoryIdRouteWithChildren =
+  ProductsCategoryIdRoute._addFileChildren(ProductsCategoryIdRouteChildren)
+
+interface ProductsRouteChildren {
+  ProductsCategoryIdRoute: typeof ProductsCategoryIdRouteWithChildren
+  ProductsIndexRoute: typeof ProductsIndexRoute
+}
+
+const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsCategoryIdRoute: ProductsCategoryIdRouteWithChildren,
+  ProductsIndexRoute: ProductsIndexRoute,
+}
+
+const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
+  ProductsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  ProductsRoute: ProductsRoute,
+  ProductsRoute: ProductsRouteWithChildren,
   QuoteRoute: QuoteRoute,
   ServicesRoute: ServicesRoute,
 }
