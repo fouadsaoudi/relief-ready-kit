@@ -100,9 +100,9 @@ function Home() {
       <section className="relative z-30 mx-auto max-w-7xl px-4 pb-20 -mt-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: ShieldCheck, t: "Quality assured", d: "Specs aligned with humanitarian & corporate standards." },
-            { icon: Truck, t: "Timely delivery", d: "Reliable logistics for emergency & supply chain timelines." },
-            { icon: Globe2, t: "Global reach", d: "Support across field operations & commercial supply chains." },
+            { icon: ShieldCheck, t: "Quality Assured", d: "Specs aligned with humanitarian & corporate standards." },
+            { icon: Truck, t: "Timely Delivery", d: "Reliable logistics for emergency & supply chain timelines." },
+            { icon: Globe2, t: "Global Reach", d: "Support across field operations & commercial supply chains." },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="feature-card flex items-start gap-4 p-5">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary/12 text-primary">
@@ -178,7 +178,7 @@ function Home() {
               className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-dashed border-border bg-muted/20 p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40 hover:bg-card"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              
+
               <div className="relative flex-1 flex flex-col justify-center items-center text-center py-4">
                 <span className="text-4xl font-extrabold tracking-tighter text-primary/70 mb-2 group-hover:scale-110 transition-transform duration-300">
                   +{categories.length - 4}
