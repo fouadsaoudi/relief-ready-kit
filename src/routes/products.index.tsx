@@ -20,7 +20,13 @@ export const Route = createFileRoute("/products/")({
       {
         property: "og:description",
         content:
-          "Humanitarian product catalog covering food, hygiene, shelter, and more.",
+          "Browse our humanitarian product categories: food, hygiene, MHM, dignity, kitchen, school, relief, shelter, and solar items.",
+      },
+      { name: "twitter:title", content: "Products — NRM Supply" },
+      {
+        name: "twitter:description",
+        content:
+          "Browse our humanitarian product categories: food, hygiene, MHM, dignity, kitchen, school, relief, shelter, and solar items.",
       },
       { property: "og:url", content: "https://relief-ready-kit.vercel.app/products" },
     ],

@@ -22,7 +22,13 @@ export const Route = createFileRoute("/quote")({
       {
         property: "og:description",
         content:
-          "Tell us your needs and we'll prepare a quotation — no commitments.",
+          "Request a tailored quotation for humanitarian relief products and field services.",
+      },
+      { name: "twitter:title", content: "Request a Quote — NRM Supply" },
+      {
+        name: "twitter:description",
+        content:
+          "Request a tailored quotation for humanitarian relief products and field services.",
       },
       { property: "og:url", content: "https://relief-ready-kit.vercel.app/quote" },
     ],

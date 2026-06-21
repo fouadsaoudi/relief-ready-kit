@@ -16,7 +16,13 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "Built to perform under the most demanding conditions, we bring speed, quality, and accountability to every client we serve.",
+          "NRM Supply delivers end-to-end supply chain, distribution, and relief solutions across Lebanon and the region, moving essential relief supplies and commercial goods alike.",
+      },
+      { name: "twitter:title", content: "About Us — NRM Supply" },
+      {
+        name: "twitter:description",
+        content:
+          "NRM Supply delivers end-to-end supply chain, distribution, and relief solutions across Lebanon and the region, moving essential relief supplies and commercial goods alike.",
       },
       { property: "og:url", content: "https://relief-ready-kit.vercel.app/about" },
     ],

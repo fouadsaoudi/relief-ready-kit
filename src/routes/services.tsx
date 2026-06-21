@@ -88,7 +88,13 @@ export const Route = createFileRoute("/services")({
       {
         property: "og:description",
         content:
-          "Operational support services for facilities, sites, and relief logistics.",
+          "Cleaning, contracting, and warehousing services for humanitarian and field-based projects.",
+      },
+      { name: "twitter:title", content: "Services — NRM Supply" },
+      {
+        name: "twitter:description",
+        content:
+          "Cleaning, contracting, and warehousing services for humanitarian and field-based projects.",
       },
       { property: "og:url", content: "https://relief-ready-kit.vercel.app/services" },
     ],

@@ -18,7 +18,15 @@ export const Route = createFileRoute("/contact")({
         content: "Get in touch with NRM Supply for humanitarian product and service inquiries.",
       },
       { property: "og:title", content: "Contact — NRM Supply" },
-      { property: "og:description", content: "Email, phone, and location for NRM Supply." },
+      {
+        property: "og:description",
+        content: "Get in touch with NRM Supply for humanitarian product and service inquiries.",
+      },
+      { name: "twitter:title", content: "Contact — NRM Supply" },
+      {
+        name: "twitter:description",
+        content: "Get in touch with NRM Supply for humanitarian product and service inquiries.",
+      },
       { property: "og:url", content: "https://relief-ready-kit.vercel.app/contact" },
     ],
   }),

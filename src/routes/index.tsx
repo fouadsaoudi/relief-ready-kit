@@ -21,7 +21,13 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Essential humanitarian supplies and B2B commercial procurement solutions worldwide.",
+          "Reliable relief supplies, custom kit assembly, and B2B bulk sourcing services for humanitarian organizations and corporate clients.",
+      },
+      { name: "twitter:title", content: "NRM Supply — Relief Supplies & B2B Bulk Sourcing" },
+      {
+        name: "twitter:description",
+        content:
+          "Reliable relief supplies, custom kit assembly, and B2B bulk sourcing services for humanitarian organizations and corporate clients.",
       },
       { property: "og:url", content: "https://relief-ready-kit.vercel.app/" },
     ],
