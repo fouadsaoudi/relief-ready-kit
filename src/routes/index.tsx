@@ -3,7 +3,7 @@ import { ArrowRight, ShieldCheck, Truck, Globe2, CheckCircle2 } from "lucide-rea
 import { SiteLayout } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { services, categories } from "@/lib/catalog";
-import heroImg from "@/assets/hero.png";
+import heroBg from "@/assets/hero_background.png";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -40,58 +40,57 @@ function Home() {
 
   return (
     <SiteLayout>
-      {/* Hero — editorial asymmetric */}
-      <section className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-12 md:gap-12">
-          <div className="md:col-span-7">
-            <span className="tag-pill">The Cover Story</span>
-            <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl">
-              Dependable bulk supplies & field services, built for <em className="not-italic text-primary">performance</em>.
+      {/* Hero — wide background image spread edge-to-edge */}
+      <section className="relative w-full overflow-hidden bg-zinc-950 min-h-[580px] lg:min-h-[640px] flex items-center border-b border-border">
+        {/* Background Image & Gradient overlay */}
+        <img
+          src={heroBg}
+          alt="Logistics Sourcing Operations"
+          className="absolute inset-0 h-full w-full object-cover z-0 object-center transition-all duration-300"
+          style={{ imageRendering: "-webkit-optimize-contrast" }}
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 lg:to-transparent z-10" />
+
+        {/* Overlaid Content Container aligned with page layout */}
+        <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-white">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur border border-white/10">
+              The Cover Story
+            </span>
+            <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl text-white">
+              Dependable bulk supplies & field services, built for <span className="text-primary">performance</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 font-light">
               NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations, anywhere, on any timeline.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" onClick={() => openQuote("")}>
+              <Button size="lg" onClick={() => openQuote("")} className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold">
                 Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-0">
+              <Button asChild size="lg" variant="outline" className="border border-white/20 text-white bg-transparent hover:bg-white/10 hover:text-white transition-all font-semibold">
                 <Link to="/products">Explore Products</Link>
               </Button>
             </div>
 
-            <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
+            <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-white/10 pt-8">
               {[
                 { k: "9+", v: "Categories" },
                 { k: "Global", v: "Delivery" },
                 { k: "24/7", v: "Quotes" },
               ].map((s) => (
                 <div key={s.v}>
-                  <dt className="font-display text-3xl font-semibold text-foreground">{s.k}</dt>
-                  <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.v}</dd>
+                  <dt className="font-display text-3xl font-semibold text-white">{s.k}</dt>
+                  <dd className="mt-1 text-[10px] uppercase tracking-widest text-zinc-400 font-medium">{s.v}</dd>
                 </div>
               ))}
             </dl>
           </div>
-
-          <div className="md:col-span-5">
-            <figure className="relative overflow-hidden rounded-xl border border-border">
-              <img
-                src={heroImg}
-                alt="Humanitarian relief supplies"
-                className="aspect-[4/5] w-full object-cover"
-                loading="eager"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent p-5 text-xs uppercase tracking-[0.18em] text-background">
-                Field operations · Global reach
-              </figcaption>
-            </figure>
-          </div>
         </div>
       </section>
 
-      {/* Trust strip */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      {/* Trust strip overlaid slightly on the hero */}
+      <section className="relative z-30 mx-auto max-w-7xl px-4 pb-20 -mt-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
             { icon: ShieldCheck, t: "Quality assured", d: "Specs aligned with humanitarian & corporate standards." },
