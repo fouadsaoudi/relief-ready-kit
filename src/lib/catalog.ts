@@ -4,8 +4,16 @@ import {
   BedDouble,
   Tent,
   Sun,
+  Package,
   type LucideIcon,
 } from "lucide-react";
+
+export type SubProduct = {
+  name: string;
+  image: string;
+  description: string;
+  specs: { label: string; value: string }[];
+};
 
 export type Product = {
   slug: string;
@@ -13,6 +21,8 @@ export type Product = {
   description: string;
   items: string[];
   specs?: { label: string; value: string }[];
+  subProducts?: SubProduct[];
+  image?: string;
 };
 
 export type Category = {
@@ -104,8 +114,6 @@ export const categories: Category[] = [
         description: "Fortified wheat-based biscuits designed for immediate energy replenishment and nutritional support during crises.",
         items: [
           "High-energy wheat biscuits",
-          "Fortified vitamins (A, B1, B2, C, D, E)",
-          "Minerals (Iron, Calcium, Zinc)",
         ],
         specs: [
           { label: "Weight", value: "100g per pack (approx. 450 kcal)" },
@@ -116,8 +124,8 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "hygiene-kits",
-    name: "Hygiene Kits",
+    slug: "wash-kits",
+    name: "WASH Kits",
     description:
       "Complete hygiene kits and personal supplies prepared for field settings and operations.",
     icon: SprayCan,
@@ -168,7 +176,6 @@ export const categories: Category[] = [
         specs: [
           { label: "Packaging", value: "Heavy-duty plastic box / box container" },
           { label: "Target", value: "Family of 5 for 1 month" },
-          { label: "Standards", value: "UNICEF / WHO guidelines" },
         ],
       },
       {
@@ -189,7 +196,6 @@ export const categories: Category[] = [
         specs: [
           { label: "Target", value: "Women and adolescent girls" },
           { label: "Features", value: "Includes discrete storage pouch" },
-          { label: "Standards", value: "UNFPA aligned guidelines" },
         ],
       },
       {
@@ -218,11 +224,11 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "relief-items",
-    name: "Relief Items",
+    slug: "relief-kits",
+    name: "Relief Kits",
     description:
-      "Essential family kits, bedding, kitchen sets, and utility items.",
-    icon: BedDouble,
+      "Essential family kits, kitchen sets, and utility items.",
+    icon: Package,
     items: [
       "Cooking pot with lid (large)",
       "Cooking pot with lid (medium)",
@@ -255,11 +261,6 @@ export const categories: Category[] = [
       "Shears",
       "Tie Wire, galvanised",
       "Claw Hammer",
-      "Mattresses",
-      "Synthetic sleeping mats",
-      "Medium thermal blankets",
-      "2-ply blankets",
-      "Pillows",
     ],
     products: [
       {
@@ -282,7 +283,6 @@ export const categories: Category[] = [
         specs: [
           { label: "Material", value: "Stainless steel / Food-grade plastic" },
           { label: "Target", value: "Family of 5-6 members" },
-          { label: "Standards", value: "ICRC / IFRC kitchen kit A standard" },
         ],
       },
       {
@@ -326,12 +326,28 @@ export const categories: Category[] = [
         specs: [
           { label: "Packaging", value: "Heavy-duty canvas tool bag" },
           { label: "Weight", value: "Approx. 12 kg" },
-          { label: "Standards", value: "UN-Habitat shelter tool kit standard" },
         ],
       },
+    ],
+  },
+  {
+    slug: "bedding-items",
+    name: "Bedding Items",
+    description:
+      "Durable relief mattresses, thermal blankets, and sleeping gear for field sites.",
+    icon: BedDouble,
+    items: [
+      "Mattresses",
+      "Synthetic sleeping mats",
+      "Medium thermal blankets",
+      "2-ply blankets",
+      "Pillows",
+    ],
+    products: [
       {
         slug: "mattress",
         name: "Mattress",
+        image: "/bedding/mattress.png",
         description: "Durable relief mattresses constructed with fiber fill and foam padding for displacement camp shelters.",
         items: [
           "Mattress (190 cm x 90 cm x 10 cm)",
@@ -346,6 +362,7 @@ export const categories: Category[] = [
       {
         slug: "synthetic-sleeping-mat",
         name: "Synthetic Sleeping Mat",
+        image: "/bedding/sleeping-mat.png",
         description: "Water-resistant, durable polyester woven sleeping mats for emergency shelter environments.",
         items: [
           "Synthetic Sleeping Mat (1.8 x 0.9 m)",
@@ -359,6 +376,7 @@ export const categories: Category[] = [
       {
         slug: "medium-thermal-blanket",
         name: "Medium Thermal Blanket",
+        image: "/bedding/medium-blanket.png",
         description: "Thermal insulation blankets designed to provide standard warmth and comfort in crisis response.",
         items: [
           "Medium Thermal Blanket (1.5 x 2 m)",
@@ -372,6 +390,7 @@ export const categories: Category[] = [
       {
         slug: "two-ply-blanket",
         name: "2-ply Blanket",
+        image: "/bedding/two-ply-blanket.png",
         description: "Heavy-duty double-layered thermal blankets for superior insulation in cold-weather relief scenarios.",
         items: [
           "2-ply Blanket (1.6 x 2 m)",
@@ -385,6 +404,7 @@ export const categories: Category[] = [
       {
         slug: "pillow",
         name: "Pillow",
+        image: "/bedding/pillow.png",
         description: "Standard comfortable support pillows configured for institutional and humanitarian shelters.",
         items: [
           "Pillow (50 x 70 cm)",
@@ -418,10 +438,40 @@ export const categories: Category[] = [
           "Multipurpose tent (24/48/72 m²)",
           "Warehouse tent (240/360 m²)",
         ],
-        specs: [
-          { label: "Family tent", value: "Poly-cotton canvas, area 23 m²" },
-          { label: "Multipurpose tent", value: "Polyethylene, 24 / 48 / 72 m²" },
-          { label: "Warehouse tent", value: "PVC material, 240 m² and 360 m²" },
+        subProducts: [
+          {
+            name: "Standard Family Tent",
+            image: "/tents/family-tent.png",
+            description: "A standard canvas shelter designed for 5-member families, featuring water, rot, and UV resistance for robust durability.",
+            specs: [
+              { label: "Dimensions", value: "5.7 m x 4 m" },
+              { label: "Floor Area", value: "23 m²" },
+              { label: "Material", value: "Poly-cotton canvas" },
+              { label: "Ventilation", value: "Dual window flaps & chimney opening" },
+            ],
+          },
+          {
+            name: "Multipurpose Tent",
+            image: "/tents/multipurpose-tent.png",
+            description: "Versatile modular emergency shelter suited for schools, community facilities, or medical units in field environments.",
+            specs: [
+              { label: "Dimensions", value: "6m x 4m / 8m x 6m / 12m x 6m" },
+              { label: "Structure", value: "Galvanized steel pipe frame" },
+              { label: "Material", value: "High-density PVC / Polyethylene fabric" },
+              { label: "Features", value: "Windows with mosquito mesh" },
+            ],
+          },
+          {
+            name: "Warehouse Tent (Mobile Storage Unit)",
+            image: "/tents/warehouse-tent.png",
+            description: "A massive industrial tension fabric warehouse structure configured for secure logistics, food storage, or equipment holding.",
+            specs: [
+              { label: "Dimensions", value: "10m x 24m / 10m x 36m" },
+              { label: "Floor Area", value: "240 m² / 360 m²" },
+              { label: "Structure", value: "Tensioned aluminum framework" },
+              { label: "Material", value: "Heavy-duty PVC cover fabric" },
+            ],
+          },
         ],
       },
       {
@@ -433,9 +483,27 @@ export const categories: Category[] = [
           "Tarpaulin 4×5 m",
           "Rope attachments",
         ],
-        specs: [
-          { label: "Material", value: "Woven high-density polyethylene (HDPE)" },
-          { label: "Standards", value: "UNHCR / IOM standard relief sheets" },
+        subProducts: [
+          {
+            name: "Reinforced Tarpaulin (4×6 m)",
+            image: "/tarpaulins/tarpaulin-4x6.png",
+            description: "A large heavy-duty waterproof ground sheet and roofing cover, built with reinforced bands and corner grommets.",
+            specs: [
+              { label: "Dimensions", value: "4 m x 6 m" },
+              { label: "Material", value: "Woven HDPE with double-side LDPE lamination" },
+              { label: "Eyelets", value: "Reinforced aluminum spacing every 1m" },
+            ],
+          },
+          {
+            name: "Reinforced Tarpaulin (4×5 m)",
+            image: "/tarpaulins/tarpaulin-4x5.png",
+            description: "A versatile weather-proof covering sheet, ideal for quick shelter setup, ground bases, and operational coverages.",
+            specs: [
+              { label: "Dimensions", value: "4 m x 5 m" },
+              { label: "Material", value: "Woven HDPE with LDPE lamination" },
+              { label: "Eyelets", value: "Reinforced brass spacing every 1m" },
+            ],
+          },
         ],
       },
     ],

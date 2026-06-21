@@ -52,7 +52,7 @@ const categoryStyles: Record<string, {
     iconColor: "text-amber-600",
     span: "lg:col-span-1",
   },
-  "hygiene-kits": {
+  "wash-kits": {
     accent: "text-teal-600 dark:text-teal-400",
     bg: "group-hover:bg-teal-500/5",
     border: "hover:border-teal-500/40",
@@ -97,13 +97,22 @@ const categoryStyles: Record<string, {
     iconColor: "text-indigo-600",
     span: "lg:col-span-1",
   },
-  "relief-items": {
+  "relief-kits": {
     accent: "text-blue-600 dark:text-blue-400",
     bg: "group-hover:bg-blue-500/5",
     border: "hover:border-blue-500/40",
     glow: "shadow-blue-500/5 hover:shadow-blue-500/10",
     iconBg: "bg-blue-500/10",
     iconColor: "text-blue-600",
+    span: "lg:col-span-1",
+  },
+  "bedding-items": {
+    accent: "text-indigo-600 dark:text-indigo-400",
+    bg: "group-hover:bg-indigo-500/5",
+    border: "hover:border-indigo-500/40",
+    glow: "shadow-indigo-500/5 hover:shadow-indigo-500/10",
+    iconBg: "bg-indigo-500/10",
+    iconColor: "text-indigo-600",
     span: "lg:col-span-1",
   },
   "shelter-items": {

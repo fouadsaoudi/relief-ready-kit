@@ -39,11 +39,6 @@ function About() {
         <h1 className="mt-4 font-display text-4xl font-semibold md:text-5xl lg:text-6xl tracking-tight">
           NRM Supply
         </h1>
-        <p className="mt-6 text-lg md:text-xl leading-relaxed text-muted-foreground font-light">
-          Learn more about us and our capabilities. NRM Supply delivers end-to-end supply chain and distribution solutions across Lebanon and the region,
-          moving essential relief supplies and commercial goods alike. Built to perform under the
-          most demanding conditions, we bring that same speed, quality, and accountability to every client we serve.
-        </p>
       </section>
 
       {/* Mission & Vision cards */}
