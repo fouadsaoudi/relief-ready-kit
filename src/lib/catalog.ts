@@ -30,7 +30,7 @@ export const categories: Category[] = [
     slug: "food-items",
     name: "Food Items",
     description:
-      "Essential food supplies and ready-to-distribute food packages for emergency and relief programs.",
+      "Essential food supplies and packages for field operations and relief programs.",
     icon: Apple,
     items: [
       "Rice",
@@ -119,7 +119,7 @@ export const categories: Category[] = [
     slug: "hygiene-kits",
     name: "Hygiene Kits",
     description:
-      "Complete hygiene kits, MHM packs, and dignity items prepared to support personal health and cleanliness in field settings.",
+      "Complete hygiene kits and personal supplies prepared for field settings and operations.",
     icon: SprayCan,
     items: [
       "Bath soap",
@@ -221,7 +221,7 @@ export const categories: Category[] = [
     slug: "relief-items",
     name: "Relief Items",
     description:
-      "Essential family and shelter response kits, including complete kitchen sets, educational supplies, and repair tool sets.",
+      "Essential family kits, bedding, kitchen sets, and utility items.",
     icon: BedDouble,
     items: [
       "Cooking pot with lid (large)",
@@ -399,7 +399,7 @@ export const categories: Category[] = [
     slug: "shelter-items",
     name: "Shelter Items",
     description:
-      "UN-standard shelter solutions, materials, tents, and tarpaulins for emergency response and field operations.",
+      "Temporary shelter solutions, materials, tents, and tarpaulins for field work and emergency response.",
     icon: Tent,
     items: [
       "Standard family tent",

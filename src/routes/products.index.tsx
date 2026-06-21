@@ -136,8 +136,7 @@ function Products() {
           Products
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed font-light">
-          Explore our range of essential relief items and humanitarian supplies. Click on any category 
-          to view specific items and custom configurations.
+          Explore our range of essential supplies, custom kits, and field products. Click on any category to view specific items and custom configurations.
         </p>
       </section>
 
@@ -273,7 +272,7 @@ function Products() {
                     Custom Sourcing
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
-                    Need specific products or custom kits not listed in our standard catalog? Our global sourcing network operates across international guidelines to procure and deliver what your program requires.
+                    Need specific products or custom configurations not listed in our standard catalog? Our global sourcing network can procure and deliver what your operation requires.
                   </p>
                 </div>
               </div>

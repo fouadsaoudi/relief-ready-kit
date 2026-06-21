@@ -11,17 +11,17 @@ import { QuoteForm } from "@/components/QuoteForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NRM Supply — Humanitarian Products & Field Services" },
+      { title: "NRM Supply — Relief Supplies & B2B Bulk Sourcing" },
       {
         name: "description",
         content:
-          "Reliable humanitarian supplies and operational services for NGOs, charities, and emergency-response programs.",
+          "Reliable relief supplies, custom kit assembly, and B2B bulk sourcing services for humanitarian organizations and corporate clients.",
       },
-      { property: "og:title", content: "NRM Supply — Humanitarian Products & Field Services" },
+      { property: "og:title", content: "NRM Supply — Relief Supplies & B2B Bulk Sourcing" },
       {
         property: "og:description",
         content:
-          "Essential relief supplies and field services for humanitarian organizations worldwide.",
+          "Essential humanitarian supplies and B2B commercial procurement solutions worldwide.",
       },
     ],
   }),
@@ -46,12 +46,10 @@ function Home() {
           <div className="md:col-span-7">
             <span className="tag-pill">The Cover Story</span>
             <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl">
-              Relief supplies, made for the <em className="not-italic text-primary">frontline</em>.
+              Dependable bulk supplies & field services, built for <em className="not-italic text-primary">performance</em>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              NRM Supply equips NGOs, charities, and emergency teams with
-              dependable products and operational support — anywhere, on any
-              timeline.
+              NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations, anywhere, on any timeline.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" onClick={() => openQuote("")}>
@@ -96,9 +94,9 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: ShieldCheck, t: "Quality assured", d: "Specs aligned with humanitarian standards." },
-            { icon: Truck, t: "Timely delivery", d: "Reliable logistics for emergency timelines." },
-            { icon: Globe2, t: "Global reach", d: "Support across field operations worldwide." },
+            { icon: ShieldCheck, t: "Quality assured", d: "Specs aligned with humanitarian & corporate standards." },
+            { icon: Truck, t: "Timely delivery", d: "Reliable logistics for emergency & supply chain timelines." },
+            { icon: Globe2, t: "Global reach", d: "Support across field operations & commercial supply chains." },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="feature-card flex items-start gap-4 p-5">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary/12 text-primary">
@@ -113,6 +111,8 @@ function Home() {
         </div>
       </section>
 
+
+
       {/* Product Summary Showcase */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-secondary/15 rounded-3xl border border-border/40 p-8 sm:p-10 mb-20 relative overflow-hidden">
         {/* Subtle decorative glows */}
@@ -121,7 +121,7 @@ function Home() {
 
         <div className="relative flex flex-wrap items-end justify-between gap-6 border-b border-border/50 pb-6 mb-10">
           <div className="max-w-2xl">
-            <span className="tag-pill">Emergency Response Supplies</span>
+            <span className="tag-pill">Catalog Showcase</span>
             <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">
               Core Products
             </h2>
@@ -224,21 +224,20 @@ function Home() {
           <div className="md:col-span-5">
             <span className="tag-pill">Partners</span>
             <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">Who we serve</h2>
-            <p className="mt-5 leading-relaxed text-muted-foreground">
-              We support organizations responding to emergencies, displacement,
-              and long-term recovery — with the right items, at the right time.
+            <p className="mt-5 leading-relaxed text-muted-foreground font-light">
+              We provide organizations, operations, and procurement teams with dependable bulk supply, ready-assembled kits, and logistical field support.
             </p>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2 md:col-span-7">
             {[
-              "NGOs",
-              "Humanitarian organizations",
-              "Charities",
+              "NGOs & UN partners",
+              "Corporate procurement teams",
+              "Charities & foundations",
+              "Wholesale commodity buyers",
               "Emergency response teams",
-              "Development programs",
-              "Field operations",
-              "Community initiatives",
-              "UN partners",
+              "Private supply chain buyers",
+              "Field operations & logistics",
+              "Commercial construction developers",
             ].map((x) => (
               <li key={x} className="flex items-center gap-2 border-b border-border/60 py-2 text-sm">
                 <CheckCircle2 className="h-4 w-4 text-accent" />
@@ -257,7 +256,7 @@ function Home() {
             <div className="relative flex flex-wrap items-center justify-between gap-6">
               <div className="max-w-xl">
                 <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                  Plan your next relief shipment with us
+                  Plan your next shipment with us
                 </h2>
                 <p className="mt-3 text-primary-foreground/85">
                   Share your needs and we'll prepare a tailored quotation — no commitments.

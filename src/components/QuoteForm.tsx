@@ -96,6 +96,7 @@ export function QuoteForm({ defaultCategory = "", onSuccess }: QuoteFormProps) {
           error={errors.country}
           required
         />
+
         <div className="grid gap-2">
           <Label htmlFor="interest">Product or Service Interested In *</Label>
           <Select name="interest" defaultValue={defaultCategory || undefined}>
