@@ -79,7 +79,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
                         {/* Footer links inside popover */}
                         <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs">
-                          <span className="text-muted-foreground">9+ key relief categories</span>
+                          <span className="text-muted-foreground">4+ key relief categories</span>
                           <Link to="/products" className="font-semibold text-primary hover:text-primary/80 flex items-center gap-0.5">
                             View All Products <ArrowRight className="h-3 w-3" />
                           </Link>

@@ -71,24 +71,45 @@ function ProductItemDetail() {
         <div className="editorial-rule mt-4" />
       </section>
 
+      {/* Header Info */}
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+        <div>
+          <span className="tag-pill mb-4">
+            <Icon className="h-3.5 w-3.5" /> {category.name}
+          </span>
+          <h1 className="font-display text-4xl font-semibold md:text-5xl lg:text-6xl tracking-tight text-foreground">
+            {matchedProduct.name}
+          </h1>
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
+            {matchedProduct.description}
+          </p>
+        </div>
+      </section>
+
       {/* Main product showcase */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 pb-24 animate-in fade-in slide-in-from-bottom-3 duration-250">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr]">
-          
-          {/* Left Column: Details & Specs */}
-          <div className="space-y-10">
-            <div>
-              <span className="tag-pill mb-4">
-                <Icon className="h-3.5 w-3.5" /> {category.name}
-              </span>
-              <h1 className="font-display text-4xl font-semibold md:text-5xl lg:text-6xl tracking-tight text-foreground">
-                {matchedProduct.name}
-              </h1>
-              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                {matchedProduct.description}
-              </p>
+          {/* Left Column: Items */}
+          <div className="space-y-8">
+            {/* Included Items list */}
+            <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground/80 flex items-center gap-2 mb-6 border-b border-border pb-4">
+                Items Included in Kit
+              </h3>
+              
+              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                {matchedProduct.items.map((item: string) => (
+                  <li key={item} className="flex items-start gap-3 rounded-xl border border-border/40 p-3 bg-secondary/10 hover:bg-secondary/20 transition-all duration-200">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span className="text-sm font-medium text-foreground/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
 
+          {/* Right Column: Specs, Quote & Info */}
+          <div className="space-y-10">
             {/* Specifications Card */}
             {matchedProduct.specs && (
               <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
@@ -106,37 +127,6 @@ function ProductItemDetail() {
                 </dl>
               </div>
             )}
-
-            {/* Procurement / Standards Info */}
-            <div className="rounded-2xl bg-secondary/30 border border-border/60 p-6 flex gap-4">
-              <Info className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-              <div>
-                <h4 className="text-sm font-bold text-foreground">Sourcing & Standards</h4>
-                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  All items are procured, configured, and packaged to meet the quality guidelines of UN agencies and international humanitarian organizations. Custom assemblies and quantities can be quoted on request.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Included Items Checklist & CTA */}
-          <div className="space-y-8">
-            
-            {/* Included Items list */}
-            <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground/80 flex items-center gap-2 mb-6 border-b border-border pb-4">
-                Items Included in Kit
-              </h3>
-              
-              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                {matchedProduct.items.map((item: string) => (
-                  <li key={item} className="flex items-start gap-3 rounded-xl border border-border/40 p-3 bg-secondary/10 hover:bg-secondary/20 transition-all duration-200">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
-                    <span className="text-sm font-medium text-foreground/90">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Action Quote CTA Box */}
             <div className="rounded-3xl bg-gradient-to-br from-primary/10 via-background to-secondary/30 border border-primary/20 p-6 sm:p-8 shadow-sm relative overflow-hidden">
@@ -157,6 +147,16 @@ function ProductItemDetail() {
               </div>
             </div>
 
+            {/* Sourcing & Standards Info */}
+            <div className="rounded-2xl bg-secondary/30 border border-border/60 p-6 flex gap-4">
+              <Info className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-sm font-bold text-foreground">Sourcing & Standards</h4>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                  All items are procured, configured, and packaged to meet the quality guidelines of UN agencies and international humanitarian organizations. Custom assemblies and quantities can be quoted on request.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
