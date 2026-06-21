@@ -24,6 +24,7 @@ export const Route = createFileRoute("/quote")({
         content:
           "Tell us your needs and we'll prepare a quotation — no commitments.",
       },
+      { property: "og:url", content: "https://relief-ready-kit.vercel.app/quote" },
     ],
   }),
   component: Quote,

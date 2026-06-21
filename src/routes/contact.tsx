@@ -19,6 +19,7 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:title", content: "Contact — NRM Supply" },
       { property: "og:description", content: "Email, phone, and location for NRM Supply." },
+      { property: "og:url", content: "https://relief-ready-kit.vercel.app/contact" },
     ],
   }),
   component: Contact,

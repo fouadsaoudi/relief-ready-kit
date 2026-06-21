@@ -90,6 +90,7 @@ export const Route = createFileRoute("/services")({
         content:
           "Operational support services for facilities, sites, and relief logistics.",
       },
+      { property: "og:url", content: "https://relief-ready-kit.vercel.app/services" },
     ],
   }),
   component: Services,

@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
         content:
           "Essential humanitarian supplies and B2B commercial procurement solutions worldwide.",
       },
+      { property: "og:url", content: "https://relief-ready-kit.vercel.app/" },
     ],
   }),
   component: Home,

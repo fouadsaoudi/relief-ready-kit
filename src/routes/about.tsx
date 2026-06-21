@@ -18,6 +18,7 @@ export const Route = createFileRoute("/about")({
         content:
           "Built to perform under the most demanding conditions, we bring speed, quality, and accountability to every client we serve.",
       },
+      { property: "og:url", content: "https://relief-ready-kit.vercel.app/about" },
     ],
   }),
   component: About,

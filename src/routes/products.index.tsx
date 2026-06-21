@@ -22,6 +22,7 @@ export const Route = createFileRoute("/products/")({
         content:
           "Humanitarian product catalog covering food, hygiene, shelter, and more.",
       },
+      { property: "og:url", content: "https://relief-ready-kit.vercel.app/products" },
     ],
   }),
   component: Products,
