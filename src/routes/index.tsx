@@ -268,7 +268,7 @@ function Home() {
               <div className="mt-8 transition-transform duration-300 group-hover:translate-x-2">
                 <Link
                   to="/services"
-                  className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary group-hover:text-accent transition-colors duration-300"
+                  className="inline-flex items-center text-xs font-bold tracking-widest text-primary group-hover:text-accent transition-colors duration-300"
                 >
                   Explore Service
                   <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
