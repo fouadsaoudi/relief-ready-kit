@@ -471,7 +471,7 @@ export const categories: Category[] = [
             ],
           },
           {
-            name: "Warehouse Tent (Mobile Storage Unit)",
+            name: "Warehouse Tent",
             image: "/tents/warehouse-tent.png",
             description: "A massive industrial tension fabric warehouse structure configured for secure logistics, food storage, or equipment holding.",
             specs: [
@@ -542,7 +542,7 @@ export const categories: Category[] = [
       {
         slug: "solar-lighting",
         name: "Solar Lighting",
-        image: "/solar/solar-lighting.jpg",
+        image: "/solar/solar-lighting.png",
         description: "Rechargeable solar lanterns and torch lights for personal safety and lighting pathways.",
         items: [
           "Solar torch light",

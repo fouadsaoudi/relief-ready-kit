@@ -262,7 +262,7 @@ function ProductItemDetail() {
               <div>
                 <h4 className="text-sm font-bold text-foreground">Sourcing & Standards</h4>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  All items are procured, configured, and packaged to meet the quality guidelines of UN agencies and international humanitarian organizations. Custom assemblies and quantities can be quoted on request.
+                  All items can be tailored to meet the specific requirements, specifications, and operational needs of each client. Product configurations, quantities, packaging, branding, and technical specifications can be customized upon request to ensure suitability for the intended application and project objectives.
                 </p>
               </div>
             </div>

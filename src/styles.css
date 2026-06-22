@@ -34,6 +34,7 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-glow: var(--glow);
+  --color-navy: var(--navy);
   --font-display: "Sora", system-ui, sans-serif;
   --font-sans: "Manrope", system-ui, sans-serif;
 }
@@ -41,17 +42,20 @@
 :root {
   --radius: 0.75rem;
 
+  /* Navy Color Definition */
+  --navy: #1b3368;
+
   /* Humanitarian Blue & Cream — calm, trustworthy, clean */
   --background: oklch(100% 0.00011 271.152);          /* warm cream white */
-  --foreground: oklch(0.22 0.03 240);         /* deep cool slate */
+  --foreground: var(--navy);
 
   --surface: oklch(0.96 0.012 80);
   --surface-2: oklch(0.93 0.015 80);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 240);
+  --card-foreground: var(--navy);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 240);
+  --popover-foreground: var(--navy);
 
   /* Primary: humanitarian blue #0384e5 */
   --primary: #f37024;             /* #0384e5 */
@@ -60,9 +64,7 @@
 
   /* Secondary: calm slate blue */
   --secondary: oklch(0.93 0.01 240);
-  --secondary-foreground: oklch(0.25 0.03 240);
-  /* --navy: #0b1b3d; */
-  --navy: #1b3368;
+  --secondary-foreground: var(--navy);
 
   --muted: oklch(0.94 0.01 80);
   --muted-foreground: oklch(0.50 0.02 240);
@@ -99,9 +101,10 @@
     background-attachment: fixed;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    color: var(--navy);
   }
 }
 

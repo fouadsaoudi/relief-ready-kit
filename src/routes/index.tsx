@@ -286,18 +286,18 @@ function Home() {
       {/* CTA */}
       <section className="pb-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary to-accent px-8 py-14 text-primary-foreground md:px-14">
-            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-glow/40 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-navy px-8 py-14 text-white md:px-14 border border-navy/20">
+            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl pointer-events-none" />
             <div className="relative flex flex-wrap items-center justify-between gap-6">
               <div className="max-w-xl">
-                <h2 className="font-display text-3xl font-semibold md:text-4xl">
+                <h2 className="font-display text-3xl font-semibold md:text-4xl text-white">
                   Plan your next shipment with us
                 </h2>
-                <p className="mt-3 text-primary-foreground/85">
+                <p className="mt-3 text-zinc-100">
                   Share your needs and we'll prepare a tailored quotation — no commitments.
                 </p>
               </div>
-              <Button size="lg" variant="secondary" onClick={() => openQuote("")}>
+              <Button size="lg" onClick={() => openQuote("")} className="bg-primary hover:bg-primary/90 text-white font-semibold shadow-sm transition-all duration-200">
                 Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>

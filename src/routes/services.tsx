@@ -22,7 +22,8 @@ const servicesDetail = {
   cleaning: {
     title: "Operational Cleaning & Sanitation Services",
     subtitle: "Professional sanitization, camp hygiene, and operational site cleanup.",
-    description: "Our professional cleaning teams are specifically trained to handle active base camps, residential zones, clinical tents, distribution facilities, and administrative field offices. We align our chemical selections and sanitization cycles with international humanitarian guidelines (WHO and CDC) to maintain sterile, safe operations in complex or remote environments.",
+    description: "With extensive experience serving international organizations, UN agencies, and large-scale institutions, NRM Supply maintains the highest standards in professional cleaning and facility maintenance. Our teams are equipped with advanced, high-quality equipment and certified cleaning products to deliver consistent, thorough results across all types of environments.",
+    description2: "Every assignment is executed with full attention to detail, strict hygiene protocols, and a commitment to preserving the integrity of your space. We understand that operations don't stop, which is why our cleaning services are available 24/7, ready to respond whenever you need us. From routine maintenance to full facility turnarounds, NRM Supply is the partner you can count on to keep your environment clean, safe, and operational.",
     capabilities: [
       "Base camp residential and common area sanitization",
       "Medical tent, clinical facility, and mobile clinic sterilization",
@@ -58,7 +59,8 @@ const servicesDetail = {
   warehousing: {
     title: "Secure Storage & Inventory Logistics Services",
     subtitle: "Supply cataloging, climate-controlled storage, and dispatch management.",
-    description: "Ensure your emergency relief kits, food packages, and operational tools are stored under secure, organized conditions. We configure secure warehousing spaces, tracking shipments via digital inventory records. From package consolidation to high-volume cross-docking, we ensure smooth receipt and dispatch.",
+    description: "NRM Supply operates fully equipped warehousing facilities designed to meet the storage and handling requirements of international organizations, NGOs, and commercial clients across Lebanon and the region. Our warehouses are managed to the highest operational standards, ensuring the safety, integrity, and traceability of every item in our care from relief supplies and humanitarian goods to commercial stock.",
+    description2: "We implement strict inventory management systems, regular quality checks, and structured handling procedures to guarantee that your goods are stored correctly and dispatched accurately. Our facilities are accessible and operational around the clock, giving clients the flexibility to move goods on their timeline without compromise. Whether you require short-term storage or long-term warehousing solutions, NRM Supply provides the space, the systems, and the team to keep your supply chain moving.",
     capabilities: [
       "Real-time digital inventory records and supply reports",
       "Climate-controlled containment for sensitive kits and dry foods",
@@ -162,14 +164,14 @@ function Services() {
                     <span className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                       <Icon className="h-7 w-7" />
                     </span>
-                    
+
                     <h2 className="mt-6 text-2xl sm:text-3xl font-display font-bold text-foreground">
                       {detail.title}
                     </h2>
                     <p className="text-sm font-semibold text-primary mt-1">
                       {detail.subtitle}
                     </p>
-                    
+
                     <p className="mt-6 text-base text-muted-foreground leading-relaxed">
                       {detail.description}
                     </p>
@@ -187,10 +189,16 @@ function Services() {
 
                 {/* Right Side: Capabilities & Specs */}
                 <div>
+                  {detail.description2 && (
+                    <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                      {detail.description2}
+                    </p>
+                  )}
+
                   <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/80 mb-4 flex items-center gap-2">
                     <ShieldCheck className="h-4 w-4 text-primary" /> Key Capabilities
                   </h3>
-                  
+
                   <ul className="space-y-3">
                     {detail.capabilities.map((cap) => (
                       <li key={cap} className="flex items-start gap-3 text-sm text-foreground/90">

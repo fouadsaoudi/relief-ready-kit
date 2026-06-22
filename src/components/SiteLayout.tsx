@@ -3,6 +3,8 @@ import { useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin, HeartHandshake, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/lib/catalog";
+import logo from "@/assets/logo.svg";
+
 
 const nav = [
   { to: "/", label: "Home" },
@@ -20,13 +22,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
-              <HeartHandshake className="h-5 w-5" />
-            </span>
-            <span className="font-display text-lg font-semibold tracking-tight">
-              NRM Supply
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="NRM Supply" className="h-9 w-auto object-contain" />
           </Link>
 
           <nav className="hidden items-center gap-7 md:flex">
@@ -147,12 +144,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <footer className="border-t border-border bg-secondary/40">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
-                <HeartHandshake className="h-5 w-5" />
-              </span>
-              <span className="font-display text-lg font-semibold">NRM Supply</span>
-            </div>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="NRM Supply" className="h-9 w-auto object-contain" />
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Dependable supplies and field services to support camp operations, field projects, and emergency response programs.
             </p>

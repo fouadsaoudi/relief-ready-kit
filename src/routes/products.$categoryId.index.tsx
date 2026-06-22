@@ -193,7 +193,7 @@ function CategoryProducts() {
               Sourcing & Standards
             </h4>
             <p className="mt-2 text-sm text-muted-foreground/90 leading-relaxed max-w-4xl">
-              All items are procured, configured, and packaged to meet the quality guidelines of UN agencies and international humanitarian organizations. Custom assemblies and quantities can be quoted on request.
+              All items can be tailored to meet the specific requirements, specifications, and operational needs of each client. Product configurations, quantities, packaging, branding, and technical specifications can be customized upon request to ensure suitability for the intended application and project objectives.
             </p>
           </div>
         </section>
