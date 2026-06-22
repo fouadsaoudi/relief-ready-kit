@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useState, useEffect, type ReactNode } from "react";
 import {
   Menu,
   X,
@@ -11,10 +11,19 @@ import {
   Sparkles,
   Hammer,
   Warehouse,
+  Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { categories, services } from "@/lib/catalog";
 import logo from "@/assets/logo.svg";
+import {
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+} from "@/components/ui/command";
 
 const serviceIcons = {
   cleaning: Sparkles,
@@ -33,6 +42,19 @@ const nav = [
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        setOpenSearch((v) => !v);
+      }
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -200,20 +222,41 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             })}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setOpenSearch(true)}
+              className="flex items-center gap-2 rounded-xl border border-border bg-muted/40 px-3 py-1.5 text-xs text-navy/80 hover:bg-secondary/60 hover:text-navy cursor-pointer transition-all animate-fade-in"
+            >
+              <Search className="h-3.5 w-3.5" />
+              <span>Search products...</span>
+              <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-0.5 rounded border bg-card px-1.5 font-mono text-[9px] font-medium text-muted-foreground/80 opacity-100">
+                <span className="text-[10px]">⌘</span>K
+              </kbd>
+            </button>
             <Button asChild>
               <Link to="/quote">Request a Quote</Link>
             </Button>
           </div>
 
-          <button
-            type="button"
-            className="grid h-10 w-10 place-items-center rounded-md md:hidden"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-1.5 md:hidden">
+            <button
+              type="button"
+              onClick={() => setOpenSearch(true)}
+              className="grid h-10 w-10 place-items-center rounded-md text-navy hover:bg-secondary cursor-pointer"
+              aria-label="Search products"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              className="grid h-10 w-10 place-items-center rounded-md text-navy hover:bg-secondary"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
         {open && (
@@ -237,6 +280,53 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
         )}
+
+        <CommandDialog open={openSearch} onOpenChange={setOpenSearch}>
+          <CommandInput placeholder="Search all products, kits, and field supplies..." />
+          <CommandList className="max-h-[360px] p-2">
+            <CommandEmpty className="py-6 text-center text-sm text-muted-foreground">
+              No products found matching your search.
+            </CommandEmpty>
+            {categories.map((category) => {
+              const Icon = category.icon;
+              const categoryProducts = category.products || [];
+              if (categoryProducts.length === 0) return null;
+              return (
+                <CommandGroup key={category.slug} heading={category.name}>
+                  {categoryProducts.map((product) => (
+                    <CommandItem
+                      key={product.slug}
+                      value={`${product.name} ${product.description} ${product.items.join(" ")} ${product.subProducts?.map((sp) => sp.name).join(" ") || ""} ${category.name}`.toLowerCase()}
+                      onSelect={() => {
+                        navigate({
+                          to: "/products/$categoryId/$productId",
+                          params: { categoryId: category.slug, productId: product.slug },
+                        });
+                        setOpenSearch(false);
+                      }}
+                      className="flex items-center justify-between gap-3 rounded-xl p-2.5 transition-all duration-200 cursor-pointer data-[selected=true]:bg-secondary/60 [&_.arrow]:data-[selected=true]:translate-x-0 [&_.arrow]:data-[selected=true]:opacity-100 [&_.arrow]:data-[selected=true]:text-primary [&_.icon-span]:data-[selected=true]:scale-110"
+                    >
+                      <div className="flex items-start gap-3 min-w-0 flex-1">
+                        <span className="icon-span grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary transition-transform duration-200">
+                          <Icon className="h-4.5 w-4.5" />
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <span className="block text-sm font-semibold text-foreground transition-colors duration-200 truncate">
+                            {product.name}
+                          </span>
+                          <span className="block mt-0.5 text-[11px] text-muted-foreground line-clamp-1 leading-normal">
+                            {product.description}
+                          </span>
+                        </div>
+                      </div>
+                      <ArrowRight className="arrow h-4 w-4 shrink-0 text-muted-foreground/30 transition-all duration-200 -translate-x-1.5 opacity-0" />
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              );
+            })}
+          </CommandList>
+        </CommandDialog>
       </header>
 
       <main className="flex-1">{children}</main>
