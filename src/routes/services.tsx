@@ -13,7 +13,13 @@ import {
   Info,
 } from "lucide-react";
 import { services } from "@/lib/catalog";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 
 const icons = { cleaning: Sparkles, contracting: Hammer, warehousing: Warehouse } as const;
@@ -22,59 +28,91 @@ const servicesDetail = {
   cleaning: {
     title: "Operational Cleaning & Sanitation Services",
     subtitle: "Professional sanitization, camp hygiene, and operational site cleanup.",
-    description: "With extensive experience serving international organizations, UN agencies, and large-scale institutions, NRM Supply maintains the highest standards in professional cleaning and facility maintenance. Our teams are equipped with advanced, high-quality equipment and certified cleaning products to deliver consistent, thorough results across all types of environments.",
-    description2: "Every assignment is executed with full attention to detail, strict hygiene protocols, and a commitment to preserving the integrity of your space. We understand that operations don't stop, which is why our cleaning services are available 24/7, ready to respond whenever you need us. From routine maintenance to full facility turnarounds, NRM Supply is the partner you can count on to keep your environment clean, safe, and operational.",
+    description:
+      "With extensive experience serving international organizations, UN agencies, and large-scale institutions, NRM Supply maintains the highest standards in professional cleaning and facility maintenance. Our teams are equipped with advanced, high-quality equipment and certified cleaning products to deliver consistent, thorough results across all types of environments.",
+    description2:
+      "Every assignment is executed with full attention to detail, strict hygiene protocols, and a commitment to preserving the integrity of your space. We understand that operations don't stop, which is why our cleaning services are available 24/7, ready to respond whenever you need us. From routine maintenance to full facility turnarounds, NRM Supply is the partner you can count on to keep your environment clean, safe, and operational.",
     capabilities: [
       "Base camp residential and common area sanitization",
       "Medical tent, clinical facility, and mobile clinic sterilization",
       "Supply warehouse organization, dust abatement, and waste control",
       "Post-construction debris removal and camp site prep",
-      "Hygiene-focused disinfecting cycles using field-tested procedures"
+      "Hygiene-focused disinfecting cycles using field-tested procedures",
     ],
     specs: [
-      { label: "Standards", value: "Compliant with WHO and international field sanitation standards" },
+      {
+        label: "Standards",
+        value: "Compliant with WHO and international field sanitation standards",
+      },
       { label: "Mobilization Time", value: "24/7 emergency site mobilization within 24-48 hours" },
-      { label: "Sanitation Agents", value: "Eco-friendly, biodegradable, non-hazardous disinfectants" },
-      { label: "Team Training", value: "Certified hazardous waste handling & infection control crews" }
-    ]
+      {
+        label: "Sanitation Agents",
+        value: "Eco-friendly, biodegradable, non-hazardous disinfectants",
+      },
+      {
+        label: "Team Training",
+        value: "Certified hazardous waste handling & infection control crews",
+      },
+    ],
   },
   contracting: {
     title: "Field Contracting & Camp Infrastructure Assembly",
     subtitle: "Modular shelters, camp plumbing, electrical grids, and structural setup.",
-    description: "We supply skilled craftsmen, tools, and technical oversight to construct, repair, and install essential field infrastructure. From modular office base assemblies and industrial warehouse tents to residential family camps, our crews handle camp electrical grids, supply line plumbing, and secure perimeter installations.",
+    description:
+      "We supply skilled craftsmen, tools, and technical oversight to construct, repair, and install essential field infrastructure. From modular office base assemblies and industrial warehouse tents to residential family camps, our crews handle camp electrical grids, supply line plumbing, and secure perimeter installations.",
     capabilities: [
       "Prefabricated storage warehouse and family shelter assembly",
       "Field office electrical grids, power distribution, and light systems",
       "Camp supply line plumbing, sewage tank connections, and water points",
       "Camp perimeter fencing, security gates, and support structure setup",
-      "Emergency structural remediation and shelter reinforcement"
+      "Emergency structural remediation and shelter reinforcement",
     ],
     specs: [
-      { label: "Shelter Speeds", value: "Standard warehouse tent assembly completed in 48-72 hours" },
-      { label: "Workforce", value: "Licensed electricians, carpenters, plumbers, and safety leads" },
+      {
+        label: "Shelter Speeds",
+        value: "Standard warehouse tent assembly completed in 48-72 hours",
+      },
+      {
+        label: "Workforce",
+        value: "Licensed electricians, carpenters, plumbers, and safety leads",
+      },
       { label: "Field Gear", value: "Self-contained mobile power generators and tool sets" },
-      { label: "Guidelines", value: "Structures aligned with UNHCR shelter design specifications" }
-    ]
+      { label: "Guidelines", value: "Structures aligned with UNHCR shelter design specifications" },
+    ],
   },
   warehousing: {
     title: "Secure Storage & Inventory Logistics Services",
     subtitle: "Supply cataloging, climate-controlled storage, and dispatch management.",
-    description: "NRM Supply operates fully equipped warehousing facilities designed to meet the storage and handling requirements of international organizations, NGOs, and commercial clients across Lebanon and the region. Our warehouses are managed to the highest operational standards, ensuring the safety, integrity, and traceability of every item in our care from relief supplies and humanitarian goods to commercial stock.",
-    description2: "We implement strict inventory management systems, regular quality checks, and structured handling procedures to guarantee that your goods are stored correctly and dispatched accurately. Our facilities are accessible and operational around the clock, giving clients the flexibility to move goods on their timeline without compromise. Whether you require short-term storage or long-term warehousing solutions, NRM Supply provides the space, the systems, and the team to keep your supply chain moving.",
+    description:
+      "NRM Supply operates fully equipped warehousing facilities designed to meet the storage and handling requirements of international organizations, NGOs, and commercial clients across Lebanon and the region. Our warehouses are managed to the highest operational standards, ensuring the safety, integrity, and traceability of every item in our care from relief supplies and humanitarian goods to commercial stock.",
+    description2:
+      "We implement strict inventory management systems, regular quality checks, and structured handling procedures to guarantee that your goods are stored correctly and dispatched accurately. Our facilities are accessible and operational around the clock, giving clients the flexibility to move goods on their timeline without compromise. Whether you require short-term storage or long-term warehousing solutions, NRM Supply provides the space, the systems, and the team to keep your supply chain moving.",
     capabilities: [
       "Real-time digital inventory records and supply reports",
       "Climate-controlled containment for sensitive kits and dry foods",
       "Relief item consolidation, kit re-packing, and custom labeling",
       "High-throughput cross-docking and logistics loading docks",
-      "24/7 camera monitoring, fire suppression, and perimeter security"
+      "24/7 camera monitoring, fire suppression, and perimeter security",
     ],
     specs: [
-      { label: "System Tracking", value: "Digital dashboard access for real-time inventory updates" },
-      { label: "Storage Capacity", value: "Pallet racking, bulk floor storage, and cold chain capacity" },
-      { label: "Dispatch Logic", value: "FIFO (First In, First Out) and FEFO (First Expired, First Out)" },
-      { label: "Site Security", value: "Restricted badge-only access, fire sprinklers, and active CCTV" }
-    ]
-  }
+      {
+        label: "System Tracking",
+        value: "Digital dashboard access for real-time inventory updates",
+      },
+      {
+        label: "Storage Capacity",
+        value: "Pallet racking, bulk floor storage, and cold chain capacity",
+      },
+      {
+        label: "Dispatch Logic",
+        value: "FIFO (First In, First Out) and FEFO (First Expired, First Out)",
+      },
+      {
+        label: "Site Security",
+        value: "Restricted badge-only access, fire sprinklers, and active CCTV",
+      },
+    ],
+  },
 };
 
 export const Route = createFileRoute("/services")({
@@ -122,7 +160,8 @@ function Services() {
           Operational Field Services
         </h1>
         <p className="mt-6 max-w-3xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-          NRM Supply complements physical supplies with professional, field-proven operational services to support base camps, emergency shelters, and logistics centers worldwide.
+          NRM Supply complements physical supplies with professional, field-proven operational
+          services to support base camps, emergency shelters, and logistics centers worldwide.
         </p>
 
         {/* Quick Nav Anchors */}
@@ -168,9 +207,7 @@ function Services() {
                     <h2 className="mt-6 text-2xl sm:text-3xl font-display font-bold text-foreground">
                       {detail.title}
                     </h2>
-                    <p className="text-sm font-semibold text-primary mt-1">
-                      {detail.subtitle}
-                    </p>
+                    <p className="text-sm font-semibold text-primary mt-1">{detail.subtitle}</p>
 
                     <p className="mt-6 text-base text-muted-foreground leading-relaxed">
                       {detail.description}
@@ -207,8 +244,6 @@ function Services() {
                       </li>
                     ))}
                   </ul>
-
-
                 </div>
               </div>
             </article>
@@ -220,7 +255,9 @@ function Services() {
       <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
         <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-border bg-card p-6 sm:p-8">
           <DialogHeader className="border-b border-border/50 pb-4 mb-4">
-            <DialogTitle className="text-2xl font-bold font-display text-foreground">Request a Quote</DialogTitle>
+            <DialogTitle className="text-2xl font-bold font-display text-foreground">
+              Request a Quote
+            </DialogTitle>
             <DialogDescription className="text-muted-foreground mt-1.5">
               Share your requirements and our team will prepare a tailored quotation.
             </DialogDescription>

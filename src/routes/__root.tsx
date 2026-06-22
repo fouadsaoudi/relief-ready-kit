@@ -90,8 +90,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "NRM Supply — Bulk Supplies & Field Services" },
       { name: "twitter:title", content: "NRM Supply — Bulk Supplies & Field Services" },
-      { property: "og:description", content: "NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations." },
-      { name: "twitter:description", content: "NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations." },
+      {
+        property: "og:description",
+        content:
+          "NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "NRM Supply provides high-quality bulk supplies, custom kit assemblies, and end-to-end logistics to support your operations.",
+      },
       { property: "og:image", content: "https://relief-ready-kit.vercel.app/og-image.png" },
       { name: "twitter:image", content: "https://relief-ready-kit.vercel.app/og-image.png" },
     ],

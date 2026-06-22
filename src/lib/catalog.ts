@@ -1,12 +1,4 @@
-import {
-  Apple,
-  SprayCan,
-  BedDouble,
-  Tent,
-  Sun,
-  Package,
-  type LucideIcon,
-} from "lucide-react";
+import { Apple, SprayCan, BedDouble, Tent, Sun, Package, type LucideIcon } from "lucide-react";
 
 export type SubProduct = {
   name: string;
@@ -39,8 +31,7 @@ export const categories: Category[] = [
   {
     slug: "food-items",
     name: "Food Items",
-    description:
-      "Essential food supplies and packages for field operations and relief programs.",
+    description: "Essential food supplies and packages for field operations and relief programs.",
     icon: Apple,
     items: [
       "Rice",
@@ -69,7 +60,8 @@ export const categories: Category[] = [
         slug: "food-kit",
         name: "Food Kit",
         image: "/food/food-kit.png",
-        description: "Dry food ration parcel containing essential cooking staples designed to sustain a family for one month.",
+        description:
+          "Dry food ration parcel containing essential cooking staples designed to sustain a family for one month.",
         items: [
           "Rice",
           "Bulgur",
@@ -93,7 +85,8 @@ export const categories: Category[] = [
         slug: "ready-to-eat-food-kit",
         name: "Ready to Eat Food Kit",
         image: "/food/ready-to-eat-kit.png",
-        description: "Immediate response food parcel containing cooked canned items and snacks requiring no water or cooking facilities.",
+        description:
+          "Immediate response food parcel containing cooked canned items and snacks requiring no water or cooking facilities.",
         items: [
           "Canned beans",
           "Canned meat",
@@ -114,10 +107,9 @@ export const categories: Category[] = [
         slug: "high-energy-biscuit",
         name: "High Energy Biscuit",
         image: "/food/high-energy-biscuit.png",
-        description: "Fortified wheat-based biscuits designed for immediate energy replenishment and nutritional support during crises.",
-        items: [
-          "High-energy wheat biscuits",
-        ],
+        description:
+          "Fortified wheat-based biscuits designed for immediate energy replenishment and nutritional support during crises.",
+        items: ["High-energy wheat biscuits"],
         specs: [
           { label: "Weight", value: "100g per pack (approx. 450 kcal)" },
           { label: "Packaging", value: "Vacuum sealed foil packs" },
@@ -161,7 +153,8 @@ export const categories: Category[] = [
         slug: "hygiene-kit",
         name: "Hygiene Kit",
         image: "/wash/hygiene-kit.png",
-        description: "Standard assembly of personal and household hygiene supplies for emergency relief programs.",
+        description:
+          "Standard assembly of personal and household hygiene supplies for emergency relief programs.",
         items: [
           "Bath soap",
           "Laundry soap / detergent",
@@ -186,7 +179,8 @@ export const categories: Category[] = [
         slug: "mhm-kit",
         name: "MHM Kit",
         image: "/wash/mhm-kit.png",
-        description: "Menstrual Hygiene Management kit prepared with personal and health support products for women and girls.",
+        description:
+          "Menstrual Hygiene Management kit prepared with personal and health support products for women and girls.",
         items: [
           "Reusable sanitary pads",
           "Disposable sanitary pads",
@@ -207,7 +201,8 @@ export const categories: Category[] = [
         slug: "dignity-kit",
         name: "Dignity Kit",
         image: "/wash/dignity-kit.png",
-        description: "Dignity kit containing essential personal care, hygiene, and safety protection items for vulnerable individuals.",
+        description:
+          "Dignity kit containing essential personal care, hygiene, and safety protection items for vulnerable individuals.",
         items: [
           "Reusable sanitary pads",
           "Disposable pads",
@@ -232,8 +227,7 @@ export const categories: Category[] = [
   {
     slug: "relief-kits",
     name: "Relief Kits",
-    description:
-      "Essential family kits, kitchen sets, and utility items.",
+    description: "Essential family kits, kitchen sets, and utility items.",
     icon: Package,
     items: [
       "Cooking pot with lid (large)",
@@ -273,7 +267,8 @@ export const categories: Category[] = [
         slug: "kitchen-set",
         name: "Kitchen Set",
         image: "/relief/kitchen-set.png",
-        description: "Practical cooking and serving utensils designed for families in displacement or emergency housing.",
+        description:
+          "Practical cooking and serving utensils designed for families in displacement or emergency housing.",
         items: [
           "Cooking pot with lid (large)",
           "Cooking pot with lid (medium)",
@@ -296,7 +291,8 @@ export const categories: Category[] = [
         slug: "school-kit",
         name: "School Kit",
         image: "/relief/school-kit.jpg",
-        description: "Essential educational and classroom supplies to support children's continued learning during recovery.",
+        description:
+          "Essential educational and classroom supplies to support children's continued learning during recovery.",
         items: [
           "School backpack",
           "Exercise notebooks",
@@ -320,7 +316,8 @@ export const categories: Category[] = [
         slug: "shelter-tool-kit",
         name: "Shelter Tool Kit",
         image: "/relief/shelter-tool-kit.jpg",
-        description: "A comprehensive set of tools for minor shelter repairs, temporary structure construction, and reinforcement.",
+        description:
+          "A comprehensive set of tools for minor shelter repairs, temporary structure construction, and reinforcement.",
         items: [
           "ROPE, polypropylene, black",
           "Handsaw, for timber",
@@ -342,8 +339,7 @@ export const categories: Category[] = [
   {
     slug: "bedding-items",
     name: "Bedding Items",
-    description:
-      "Durable relief mattresses, thermal blankets, and sleeping gear for field sites.",
+    description: "Durable relief mattresses, thermal blankets, and sleeping gear for field sites.",
     icon: BedDouble,
     items: [
       "Mattresses",
@@ -357,11 +353,9 @@ export const categories: Category[] = [
         slug: "mattress",
         name: "Mattress",
         image: "/bedding/mattress.png",
-        description: "Durable relief mattresses constructed with fiber fill and foam padding for displacement camp shelters.",
-        items: [
-          "Mattress (190 cm x 90 cm x 10 cm)",
-          "Mattress (190 cm x 80 cm x 10 cm)",
-        ],
+        description:
+          "Durable relief mattresses constructed with fiber fill and foam padding for displacement camp shelters.",
+        items: ["Mattress (190 cm x 90 cm x 10 cm)", "Mattress (190 cm x 80 cm x 10 cm)"],
         specs: [
           { label: "Material", value: "Fiber Fill & Foam" },
           { label: "Dimension 1", value: "190 cm x 90 cm x 10 cm" },
@@ -372,10 +366,9 @@ export const categories: Category[] = [
         slug: "synthetic-sleeping-mat",
         name: "Synthetic Sleeping Mat",
         image: "/bedding/sleeping-mat.png",
-        description: "Water-resistant, durable polyester woven sleeping mats for emergency shelter environments.",
-        items: [
-          "Synthetic Sleeping Mat (1.8 x 0.9 m)",
-        ],
+        description:
+          "Water-resistant, durable polyester woven sleeping mats for emergency shelter environments.",
+        items: ["Synthetic Sleeping Mat (1.8 x 0.9 m)"],
         specs: [
           { label: "Material", value: "Polyester" },
           { label: "Dimension", value: "1.8 x 0.9 m" },
@@ -386,10 +379,9 @@ export const categories: Category[] = [
         slug: "medium-thermal-blanket",
         name: "Medium Thermal Blanket",
         image: "/bedding/medium-blanket.png",
-        description: "Thermal insulation blankets designed to provide standard warmth and comfort in crisis response.",
-        items: [
-          "Medium Thermal Blanket (1.5 x 2 m)",
-        ],
+        description:
+          "Thermal insulation blankets designed to provide standard warmth and comfort in crisis response.",
+        items: ["Medium Thermal Blanket (1.5 x 2 m)"],
         specs: [
           { label: "Type", value: "Medium Thermal Blanket" },
           { label: "Dimension", value: "1.5 x 2 m" },
@@ -400,10 +392,9 @@ export const categories: Category[] = [
         slug: "two-ply-blanket",
         name: "2-ply Blanket",
         image: "/bedding/two-ply-blanket.png",
-        description: "Heavy-duty double-layered thermal blankets for superior insulation in cold-weather relief scenarios.",
-        items: [
-          "2-ply Blanket (1.6 x 2 m)",
-        ],
+        description:
+          "Heavy-duty double-layered thermal blankets for superior insulation in cold-weather relief scenarios.",
+        items: ["2-ply Blanket (1.6 x 2 m)"],
         specs: [
           { label: "Type", value: "2-ply Blanket" },
           { label: "Dimension", value: "1.6 x 2 m" },
@@ -414,13 +405,10 @@ export const categories: Category[] = [
         slug: "pillow",
         name: "Pillow",
         image: "/bedding/pillow.png",
-        description: "Standard comfortable support pillows configured for institutional and humanitarian shelters.",
-        items: [
-          "Pillow (50 x 70 cm)",
-        ],
-        specs: [
-          { label: "Dimension", value: "50 x 70 cm" },
-        ],
+        description:
+          "Standard comfortable support pillows configured for institutional and humanitarian shelters.",
+        items: ["Pillow (50 x 70 cm)"],
+        specs: [{ label: "Dimension", value: "50 x 70 cm" }],
       },
     ],
   },
@@ -441,7 +429,8 @@ export const categories: Category[] = [
       {
         slug: "humanitarian-tents",
         name: "Humanitarian Tents",
-        description: "UN-standard temporary shelter and storage tents including family-sized, multipurpose, and logistics warehouse tents.",
+        description:
+          "UN-standard temporary shelter and storage tents including family-sized, multipurpose, and logistics warehouse tents.",
         items: [
           "Standard family tent (23 m²)",
           "Multipurpose tent (24/48/72 m²)",
@@ -451,7 +440,8 @@ export const categories: Category[] = [
           {
             name: "Standard Family Tent",
             image: "/tents/family-tent.png",
-            description: "A standard canvas shelter designed for 5-member families, featuring water, rot, and UV resistance for robust durability.",
+            description:
+              "A standard canvas shelter designed for 5-member families, featuring water, rot, and UV resistance for robust durability.",
             specs: [
               { label: "Dimensions", value: "5.7 m x 4 m" },
               { label: "Floor Area", value: "23 m²" },
@@ -462,7 +452,8 @@ export const categories: Category[] = [
           {
             name: "Multipurpose Tent",
             image: "/tents/multipurpose-tent.png",
-            description: "Versatile modular emergency shelter suited for schools, community facilities, or medical units in field environments.",
+            description:
+              "Versatile modular emergency shelter suited for schools, community facilities, or medical units in field environments.",
             specs: [
               { label: "Dimensions", value: "6m x 4m / 8m x 6m / 12m x 6m" },
               { label: "Structure", value: "Galvanized steel pipe frame" },
@@ -473,7 +464,8 @@ export const categories: Category[] = [
           {
             name: "Warehouse Tent",
             image: "/tents/warehouse-tent.png",
-            description: "A massive industrial tension fabric warehouse structure configured for secure logistics, food storage, or equipment holding.",
+            description:
+              "A massive industrial tension fabric warehouse structure configured for secure logistics, food storage, or equipment holding.",
             specs: [
               { label: "Dimensions", value: "10m x 24m / 10m x 36m" },
               { label: "Floor Area", value: "240 m² / 360 m²" },
@@ -486,17 +478,15 @@ export const categories: Category[] = [
       {
         slug: "reinforced-tarpaulins",
         name: "Reinforced Tarpaulins",
-        description: "Heavy-duty waterproof tarpaulins for temporary roofing, ground base sheets, and weather-proof coverings.",
-        items: [
-          "Tarpaulin 4×6 m",
-          "Tarpaulin 4×5 m",
-          "Rope attachments",
-        ],
+        description:
+          "Heavy-duty waterproof tarpaulins for temporary roofing, ground base sheets, and weather-proof coverings.",
+        items: ["Tarpaulin 4×6 m", "Tarpaulin 4×5 m", "Rope attachments"],
         subProducts: [
           {
             name: "Reinforced Tarpaulin (4×6 m)",
             image: "/tarpaulins/tarpaulin-4x6.png",
-            description: "A large heavy-duty waterproof ground sheet and roofing cover, built with reinforced bands and corner grommets.",
+            description:
+              "A large heavy-duty waterproof ground sheet and roofing cover, built with reinforced bands and corner grommets.",
             specs: [
               { label: "Dimensions", value: "4 m x 6 m" },
               { label: "Material", value: "Woven HDPE with double-side LDPE lamination" },
@@ -506,7 +496,8 @@ export const categories: Category[] = [
           {
             name: "Reinforced Tarpaulin (4×5 m)",
             image: "/tarpaulins/tarpaulin-4x5.png",
-            description: "A versatile weather-proof covering sheet, ideal for quick shelter setup, ground bases, and operational coverages.",
+            description:
+              "A versatile weather-proof covering sheet, ideal for quick shelter setup, ground bases, and operational coverages.",
             specs: [
               { label: "Dimensions", value: "4 m x 5 m" },
               { label: "Material", value: "Woven HDPE with LDPE lamination" },
@@ -529,21 +520,21 @@ export const categories: Category[] = [
         slug: "solar-power-kits",
         name: "Solar Power Kits",
         image: "/solar/solar-power-kit.jpg",
-        description: "Portable solar arrays and battery units to provide clean energy in off-grid field environments.",
+        description:
+          "Portable solar arrays and battery units to provide clean energy in off-grid field environments.",
         items: [
           "Deep-cycle solar batteries",
           "Photovoltaic solar panels",
           "Charge controller & cables",
         ],
-        specs: [
-          { label: "Capacity", value: "Varies from 50W to 300W kits" },
-        ],
+        specs: [{ label: "Capacity", value: "Varies from 50W to 300W kits" }],
       },
       {
         slug: "solar-lighting",
         name: "Solar Lighting",
         image: "/solar/solar-lighting.png",
-        description: "Rechargeable solar lanterns and torch lights for personal safety and lighting pathways.",
+        description:
+          "Rechargeable solar lanterns and torch lights for personal safety and lighting pathways.",
         items: [
           "Solar torch light",
           "Solar lantern with USB output",
@@ -568,8 +559,7 @@ export const services = [
   {
     slug: "contracting",
     name: "Contracting Services",
-    description:
-      "Practical contracting support for humanitarian and field-based projects.",
+    description: "Practical contracting support for humanitarian and field-based projects.",
   },
   {
     slug: "warehousing",

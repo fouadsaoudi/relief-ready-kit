@@ -5,7 +5,13 @@ import { Button } from "@/components/ui/button";
 import { services, categories } from "@/lib/catalog";
 import heroBg from "@/assets/hero_background.png";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 
 export const Route = createFileRoute("/")({
@@ -34,7 +40,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
 
 function Home() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -66,16 +71,28 @@ function Home() {
               The Cover Story
             </span>
             <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl text-white">
-              Dependable bulk supplies & field services, built for <span className="text-primary">performance</span>.
+              Dependable bulk supplies & field services, built for{" "}
+              <span className="text-primary">performance</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 font-light">
-              NRM Supply provides dependable bulk supplies, custom kit assemblies, and operational field services, built for high performance. As a global sourcing partner, we deliver critical relief supplies and B2B procurement solutions anywhere, on any timeline.
+              NRM Supply provides dependable bulk supplies, custom kit assemblies, and operational
+              field services, built for high performance. As a global sourcing partner, we deliver
+              critical relief supplies and B2B procurement solutions anywhere, on any timeline.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" onClick={() => openQuote("")} className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold">
+              <Button
+                size="lg"
+                onClick={() => openQuote("")}
+                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold"
+              >
                 Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button asChild size="lg" variant="outline" className="border border-white/20 text-white bg-transparent hover:bg-white/10 hover:text-white transition-all font-semibold">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border border-white/20 text-white bg-transparent hover:bg-white/10 hover:text-white transition-all font-semibold"
+              >
                 <Link to="/products">Explore Products</Link>
               </Button>
             </div>
@@ -88,7 +105,9 @@ function Home() {
               ].map((s) => (
                 <div key={s.v}>
                   <dt className="font-display text-3xl font-semibold text-white">{s.k}</dt>
-                  <dd className="mt-1 text-[10px] uppercase tracking-widest text-zinc-400 font-medium">{s.v}</dd>
+                  <dd className="mt-1 text-[10px] uppercase tracking-widest text-zinc-400 font-medium">
+                    {s.v}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -100,9 +119,21 @@ function Home() {
       <section className="relative z-30 mx-auto max-w-7xl px-4 pb-20 -mt-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: ShieldCheck, t: "Quality Assured", d: "Specs aligned with humanitarian & corporate standards." },
-            { icon: Truck, t: "Timely Delivery", d: "Reliable logistics for emergency & supply chain timelines." },
-            { icon: Globe2, t: "Global Reach", d: "Support across field operations & commercial supply chains." },
+            {
+              icon: ShieldCheck,
+              t: "Quality Assured",
+              d: "Specs aligned with humanitarian & corporate standards.",
+            },
+            {
+              icon: Truck,
+              t: "Timely Delivery",
+              d: "Reliable logistics for emergency & supply chain timelines.",
+            },
+            {
+              icon: Globe2,
+              t: "Global Reach",
+              d: "Support across field operations & commercial supply chains.",
+            },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="feature-card flex items-start gap-4 p-5">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary/12 text-primary">
@@ -117,8 +148,6 @@ function Home() {
         </div>
       </section>
 
-
-
       {/* Product Summary Showcase */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-secondary/15 rounded-3xl border border-border/40 p-8 sm:p-10 mb-20 relative overflow-hidden">
         {/* Subtle decorative glows */}
@@ -128,11 +157,13 @@ function Home() {
         <div className="relative flex flex-wrap items-end justify-between gap-6 border-b border-border/50 pb-6 mb-10">
           <div className="max-w-2xl">
             <span className="tag-pill">Catalog Showcase</span>
-            <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">
-              Core Products
-            </h2>
+            <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">Core Products</h2>
           </div>
-          <Button asChild variant="outline" className="border-primary/20 hover:bg-primary/5 hover:text-primary">
+          <Button
+            asChild
+            variant="outline"
+            className="border-primary/20 hover:bg-primary/5 hover:text-primary"
+          >
             <Link to="/products">
               View Full Catalog <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -210,8 +241,8 @@ function Home() {
             <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">Field Services</h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            Practical operational support that complements our supply work — logistics,
-            assessment, and program enablement.
+            Practical operational support that complements our supply work — logistics, assessment,
+            and program enablement.
           </p>
         </div>
 
@@ -251,8 +282,6 @@ function Home() {
         </div>
       </section>
 
-
-
       {/* Who we serve — editorial spread */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 border-y border-border py-12 md:grid-cols-12">
@@ -260,7 +289,8 @@ function Home() {
             <span className="tag-pill">Partners</span>
             <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">Who we serve</h2>
             <p className="mt-5 leading-relaxed text-muted-foreground font-light">
-              We provide organizations, operations, and procurement teams with dependable bulk supply, ready-assembled kits, and logistical field support.
+              We provide organizations, operations, and procurement teams with dependable bulk
+              supply, ready-assembled kits, and logistical field support.
             </p>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2 md:col-span-7">
@@ -274,7 +304,10 @@ function Home() {
               "Field operations & logistics",
               "Commercial construction developers",
             ].map((x) => (
-              <li key={x} className="flex items-center gap-2 border-b border-border/60 py-2 text-sm">
+              <li
+                key={x}
+                className="flex items-center gap-2 border-b border-border/60 py-2 text-sm"
+              >
                 <CheckCircle2 className="h-4 w-4 text-accent" />
                 {x}
               </li>
@@ -297,7 +330,11 @@ function Home() {
                   Share your needs and we'll prepare a tailored quotation — no commitments.
                 </p>
               </div>
-              <Button size="lg" onClick={() => openQuote("")} className="bg-primary hover:bg-primary/90 text-white font-semibold shadow-sm transition-all duration-200">
+              <Button
+                size="lg"
+                onClick={() => openQuote("")}
+                className="bg-primary hover:bg-primary/90 text-white font-semibold shadow-sm transition-all duration-200"
+              >
                 Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -308,7 +345,9 @@ function Home() {
       <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
         <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-border bg-card p-6 sm:p-8">
           <DialogHeader className="border-b border-border/50 pb-4 mb-4">
-            <DialogTitle className="text-2xl font-bold font-display text-foreground">Request a Quote</DialogTitle>
+            <DialogTitle className="text-2xl font-bold font-display text-foreground">
+              Request a Quote
+            </DialogTitle>
             <DialogDescription className="text-muted-foreground mt-1.5">
               Share your requirements and our team will prepare a tailored quotation.
             </DialogDescription>

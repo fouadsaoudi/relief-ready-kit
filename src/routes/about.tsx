@@ -53,10 +53,10 @@ function About() {
               <h2 className="font-display text-2xl font-semibold">Our Mission</h2>
             </div>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              We deliver end-to-end supply chain and distribution solutions across Lebanon and the region,
-              moving essential relief supplies and commercial goods alike. Built to perform under the
-              most demanding conditions, we bring that same speed, quality, and accountability to every
-              client we serve.
+              We deliver end-to-end supply chain and distribution solutions across Lebanon and the
+              region, moving essential relief supplies and commercial goods alike. Built to perform
+              under the most demanding conditions, we bring that same speed, quality, and
+              accountability to every client we serve.
             </p>
           </div>
 
@@ -69,9 +69,10 @@ function About() {
               <h2 className="font-display text-2xl font-semibold">Our Vision</h2>
             </div>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              To provide the essential supply chain solutions that empower every organization working
-              to reach people, whether responding to a crisis or serving an everyday market. We exist
-              to ensure that goods move further, faster, and reach the lives and communities that depend on them.
+              To provide the essential supply chain solutions that empower every organization
+              working to reach people, whether responding to a crisis or serving an everyday market.
+              We exist to ensure that goods move further, faster, and reach the lives and
+              communities that depend on them.
             </p>
           </div>
         </div>
@@ -93,7 +94,9 @@ function About() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <Link to="/quote">Request a Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  <Link to="/quote">
+                    Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
                   <Link to="/contact">Contact Us</Link>
@@ -109,7 +112,8 @@ function About() {
                   <ShieldCheck className="h-4.5 w-4.5 text-primary" /> Product Portfolio
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Sourced and supplied to the quality standards required by international organizations and UN agencies.
+                  Sourced and supplied to the quality standards required by international
+                  organizations and UN agencies.
                 </p>
                 <div className="grid gap-2.5 sm:grid-cols-2">
                   {[
@@ -121,7 +125,10 @@ function About() {
                     "Tarpaulins & tents",
                     "Solar energy solutions",
                   ].map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-sm text-foreground/90 font-medium">
+                    <div
+                      key={item}
+                      className="flex items-center gap-2 text-sm text-foreground/90 font-medium"
+                    >
                       <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                       {item}
                     </div>
@@ -135,7 +142,8 @@ function About() {
                   <Heart className="h-4.5 w-4.5 text-accent" /> Operational Services
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Ensuring that every step of the supply chain is covered under one reliable partner.
+                  Ensuring that every step of the supply chain is covered under one reliable
+                  partner.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {[
@@ -143,8 +151,13 @@ function About() {
                     "Professional cleaning",
                     "Contracting services",
                   ].map((service) => (
-                    <div key={service} className="flex flex-col justify-between border border-border/40 rounded-xl p-3 bg-secondary/10 hover:bg-secondary/20 transition-colors duration-200">
-                      <span className="text-xs font-semibold leading-normal text-foreground">{service}</span>
+                    <div
+                      key={service}
+                      className="flex flex-col justify-between border border-border/40 rounded-xl p-3 bg-secondary/10 hover:bg-secondary/20 transition-colors duration-200"
+                    >
+                      <span className="text-xs font-semibold leading-normal text-foreground">
+                        {service}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -155,7 +168,9 @@ function About() {
           {/* Footer Callout */}
           <div className="mt-12 pt-8 border-t border-border/60 text-center">
             <p className="text-base font-medium text-foreground italic max-w-4xl mx-auto leading-relaxed">
-              "Whether you are responding to a crisis, running a large-scale operation, or managing everyday business needs, NRM Supply delivers with the speed, precision, and accountability your mission demands."
+              "Whether you are responding to a crisis, running a large-scale operation, or managing
+              everyday business needs, NRM Supply delivers with the speed, precision, and
+              accountability your mission demands."
             </p>
           </div>
         </div>

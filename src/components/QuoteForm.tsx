@@ -65,8 +65,8 @@ export function QuoteForm({ defaultCategory = "", onSuccess }: QuoteFormProps) {
         </span>
         <h2 className="mt-6 text-2xl font-semibold">Thank you</h2>
         <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto">
-          Your quotation request has been received. Our team will get back to you
-          shortly with details and pricing.
+          Your quotation request has been received. Our team will get back to you shortly with
+          details and pricing.
         </p>
         <Button className="mt-8" onClick={() => setSubmitted(false)}>
           Submit another request
@@ -76,26 +76,13 @@ export function QuoteForm({ defaultCategory = "", onSuccess }: QuoteFormProps) {
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className="grid gap-5 py-4"
-    >
+    <form onSubmit={onSubmit} className="grid gap-5 py-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Full Name" name="name" error={errors.name} required />
-        <Field
-          label="Organization Name"
-          name="organization"
-          error={errors.organization}
-          required
-        />
+        <Field label="Organization Name" name="organization" error={errors.organization} required />
         <Field label="Email" name="email" type="email" error={errors.email} required />
         <Field label="Phone Number" name="phone" error={errors.phone} required />
-        <Field
-          label="Country / Location"
-          name="country"
-          error={errors.country}
-          required
-        />
+        <Field label="Country / Location" name="country" error={errors.country} required />
 
         <div className="grid gap-2">
           <Label htmlFor="interest">Product or Service Interested In *</Label>
@@ -133,9 +120,7 @@ export function QuoteForm({ defaultCategory = "", onSuccess }: QuoteFormProps) {
               ))}
             </SelectContent>
           </Select>
-          {errors.interest && (
-            <p className="text-xs text-destructive">{errors.interest}</p>
-          )}
+          {errors.interest && <p className="text-xs text-destructive">{errors.interest}</p>}
         </div>
       </div>
 

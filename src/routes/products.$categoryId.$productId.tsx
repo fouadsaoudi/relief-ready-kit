@@ -3,7 +3,13 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/lib/catalog";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 import { CheckCircle2, ChevronLeft, ArrowRight, ShieldCheck, Info } from "lucide-react";
 
@@ -37,7 +43,10 @@ export const Route = createFileRoute("/products/$categoryId/$productId")({
         { property: "og:description", content: description },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
-        { property: "og:url", content: `https://relief-ready-kit.vercel.app/products/${params.categoryId}/${params.productId}` },
+        {
+          property: "og:url",
+          content: `https://relief-ready-kit.vercel.app/products/${params.categoryId}/${params.productId}`,
+        },
       ],
     };
   },
@@ -70,7 +79,9 @@ function ProductItemDetail() {
       <SiteLayout>
         <div className="mx-auto max-w-4xl px-4 py-24 text-center">
           <h1 className="text-3xl font-bold font-display text-foreground">Product Not Found</h1>
-          <p className="mt-4 text-muted-foreground">The requested product could not be located in our catalog.</p>
+          <p className="mt-4 text-muted-foreground">
+            The requested product could not be located in our catalog.
+          </p>
           <Button asChild className="mt-8">
             <Link to="/products">Back to Catalog</Link>
           </Button>
@@ -93,9 +104,15 @@ function ProductItemDetail() {
           <ChevronLeft className="h-4 w-4" /> Back to category
         </Link>
         <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground uppercase tracking-widest">
-          <Link to="/products" className="hover:text-foreground">Catalog</Link>
+          <Link to="/products" className="hover:text-foreground">
+            Catalog
+          </Link>
           <span>/</span>
-          <Link to="/products/$categoryId" params={{ categoryId: category.slug }} className="hover:text-foreground">
+          <Link
+            to="/products/$categoryId"
+            params={{ categoryId: category.slug }}
+            className="hover:text-foreground"
+          >
             {category.name}
           </Link>
           <span>/</span>
@@ -114,7 +131,8 @@ function ProductItemDetail() {
             {matchedProduct.name}
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
-            NRM Supply offers {matchedProduct.name.toLowerCase()} as part of our premium field kits and bulk supplies catalog. {matchedProduct.description}
+            NRM Supply offers {matchedProduct.name.toLowerCase()} as part of our premium field kits
+            and bulk supplies catalog. {matchedProduct.description}
           </p>
         </div>
       </section>
@@ -207,7 +225,10 @@ function ProductItemDetail() {
 
                 <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                   {matchedProduct.items.map((item: string) => (
-                    <li key={item} className="flex items-start gap-3 rounded-xl border border-border/40 p-3 bg-secondary/10 hover:bg-secondary/20 transition-all duration-200">
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl border border-border/40 p-3 bg-secondary/10 hover:bg-secondary/20 transition-all duration-200"
+                    >
                       <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
                       <span className="text-sm font-medium text-foreground/90">{item}</span>
                     </li>
@@ -228,9 +249,16 @@ function ProductItemDetail() {
 
                 <dl className="grid gap-4 sm:grid-cols-2">
                   {matchedProduct.specs.map((s: any) => (
-                    <div key={s.label} className="border-b border-border/40 pb-3 last:border-0 last:pb-0">
-                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{s.label}</dt>
-                      <dd className="mt-1 text-sm font-semibold text-foreground/90 leading-relaxed">{s.value}</dd>
+                    <div
+                      key={s.label}
+                      className="border-b border-border/40 pb-3 last:border-0 last:pb-0"
+                    >
+                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        {s.label}
+                      </dt>
+                      <dd className="mt-1 text-sm font-semibold text-foreground/90 leading-relaxed">
+                        {s.value}
+                      </dd>
                     </div>
                   ))}
                 </dl>
@@ -243,14 +271,24 @@ function ProductItemDetail() {
 
               <h3 className="font-display text-xl font-bold text-foreground">Request a Quote</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Submit a request with your desired quantities and destination. Our response team will provide a comprehensive quotation with competitive pricing.
+                Submit a request with your desired quantities and destination. Our response team
+                will provide a comprehensive quotation with competitive pricing.
               </p>
 
               <div className="mt-6 space-y-3">
-                <Button onClick={() => setIsQuoteOpen(true)} className="w-full justify-center" size="lg">
+                <Button
+                  onClick={() => setIsQuoteOpen(true)}
+                  className="w-full justify-center"
+                  size="lg"
+                >
                   Request Pricing Estimate <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button asChild variant="outline" className="w-full justify-center bg-card" size="lg">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full justify-center bg-card"
+                  size="lg"
+                >
                   <Link to="/contact">Contact Sourcing Team</Link>
                 </Button>
               </div>
@@ -262,7 +300,10 @@ function ProductItemDetail() {
               <div>
                 <h4 className="text-sm font-bold text-foreground">Sourcing & Standards</h4>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  All items can be tailored to meet the specific requirements, specifications, and operational needs of each client. Product configurations, quantities, packaging, branding, and technical specifications can be customized upon request to ensure suitability for the intended application and project objectives.
+                  All items can be tailored to meet the specific requirements, specifications, and
+                  operational needs of each client. Product configurations, quantities, packaging,
+                  branding, and technical specifications can be customized upon request to ensure
+                  suitability for the intended application and project objectives.
                 </p>
               </div>
             </div>
@@ -274,12 +315,18 @@ function ProductItemDetail() {
       <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
         <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-border bg-card p-6 sm:p-8">
           <DialogHeader className="border-b border-border/50 pb-4 mb-4">
-            <DialogTitle className="text-2xl font-bold font-display text-foreground">Request a Quote</DialogTitle>
+            <DialogTitle className="text-2xl font-bold font-display text-foreground">
+              Request a Quote
+            </DialogTitle>
             <DialogDescription className="text-muted-foreground mt-1.5">
-              Share your requirements for {matchedProduct.name} and our team will prepare a tailored quotation.
+              Share your requirements for {matchedProduct.name} and our team will prepare a tailored
+              quotation.
             </DialogDescription>
           </DialogHeader>
-          <QuoteForm defaultCategory={matchedProduct.slug} onSuccess={() => setIsQuoteOpen(false)} />
+          <QuoteForm
+            defaultCategory={matchedProduct.slug}
+            onSuccess={() => setIsQuoteOpen(false)}
+          />
         </DialogContent>
       </Dialog>
     </SiteLayout>

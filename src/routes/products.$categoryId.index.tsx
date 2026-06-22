@@ -3,7 +3,13 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/lib/catalog";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ChevronLeft, ArrowRight } from "lucide-react";
 
@@ -22,21 +28,27 @@ export const Route = createFileRoute("/products/$categoryId/")({
         { property: "og:description", content: description },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
-        { property: "og:url", content: `https://relief-ready-kit.vercel.app/products/${params.categoryId}` },
+        {
+          property: "og:url",
+          content: `https://relief-ready-kit.vercel.app/products/${params.categoryId}`,
+        },
       ],
     };
   },
   component: CategoryProducts,
 });
 
-const categoryStyles: Record<string, {
-  accent: string;
-  bg: string;
-  border: string;
-  glow: string;
-  iconBg: string;
-  iconColor: string;
-}> = {
+const categoryStyles: Record<
+  string,
+  {
+    accent: string;
+    bg: string;
+    border: string;
+    glow: string;
+    iconBg: string;
+    iconColor: string;
+  }
+> = {
   "food-items": {
     accent: "text-amber-600 dark:text-amber-400",
     bg: "group-hover:bg-amber-500/5",
@@ -177,7 +189,9 @@ function CategoryProducts() {
           <ChevronLeft className="h-4 w-4" /> Back to products
         </Link>
         <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground uppercase tracking-widest">
-          <Link to="/products" className="hover:text-foreground">Catalog</Link>
+          <Link to="/products" className="hover:text-foreground">
+            Catalog
+          </Link>
           <span>/</span>
           <span className="text-foreground font-semibold">{category.name}</span>
         </div>
@@ -193,22 +207,32 @@ function CategoryProducts() {
               Sourcing & Standards
             </h4>
             <p className="mt-2 text-sm text-muted-foreground/90 leading-relaxed max-w-4xl">
-              All items can be tailored to meet the specific requirements, specifications, and operational needs of each client. Product configurations, quantities, packaging, branding, and technical specifications can be customized upon request to ensure suitability for the intended application and project objectives.
+              All items can be tailored to meet the specific requirements, specifications, and
+              operational needs of each client. Product configurations, quantities, packaging,
+              branding, and technical specifications can be customized upon request to ensure
+              suitability for the intended application and project objectives.
             </p>
           </div>
         </section>
       )}
 
       {/* Header Info */}
-      <section className={`mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8 ${category.slug === "food-items" ? "pt-6" : "pt-10"}`}>
+      <section
+        className={`mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8 ${category.slug === "food-items" ? "pt-6" : "pt-10"}`}
+      >
         <div className="flex items-center gap-3">
-          <span className={`grid h-12 w-12 place-items-center rounded-xl ${style.iconBg} ${style.iconColor}`}>
+          <span
+            className={`grid h-12 w-12 place-items-center rounded-xl ${style.iconBg} ${style.iconColor}`}
+          >
             <Icon className="h-6.5 w-6.5" />
           </span>
-          <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">{category.name}</h1>
+          <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
+            {category.name}
+          </h1>
         </div>
         <p className="mt-4 max-w-2xl text-base text-muted-foreground leading-relaxed">
-          NRM Supply offers {category.name.toLowerCase()} for global field operations and B2B sourcing. {category.description}
+          NRM Supply offers {category.name.toLowerCase()} for global field operations and B2B
+          sourcing. {category.description}
         </p>
       </section>
 
@@ -229,12 +253,16 @@ function CategoryProducts() {
                   aria-label={`View ${p.name} details`}
                 />
 
-                <div className={`absolute -inset-px rounded-3xl bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${style.bg}`} />
+                <div
+                  className={`absolute -inset-px rounded-3xl bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${style.bg}`}
+                />
 
                 <div className="relative flex h-full flex-col justify-between">
                   <div>
                     {(() => {
-                      const productImage = p.image || (p.subProducts && p.subProducts.length > 0 ? p.subProducts[0].image : null);
+                      const productImage =
+                        p.image ||
+                        (p.subProducts && p.subProducts.length > 0 ? p.subProducts[0].image : null);
                       if (!productImage) return null;
                       return (
                         <div className="relative w-full aspect-[3/2] overflow-hidden border-b border-border/30 bg-muted/40">
@@ -310,7 +338,9 @@ function CategoryProducts() {
       <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
         <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-border bg-card p-6 sm:p-8">
           <DialogHeader className="border-b border-border/50 pb-4 mb-4">
-            <DialogTitle className="text-2xl font-bold font-display text-foreground">Request a Quote</DialogTitle>
+            <DialogTitle className="text-2xl font-bold font-display text-foreground">
+              Request a Quote
+            </DialogTitle>
             <DialogDescription className="text-muted-foreground mt-1.5">
               Share your requirements and our team will prepare a tailored quotation.
             </DialogDescription>

@@ -1,10 +1,26 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import { Menu, X, Mail, Phone, MapPin, HeartHandshake, ArrowRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  Mail,
+  Phone,
+  MapPin,
+  HeartHandshake,
+  ArrowRight,
+  Sparkles,
+  Hammer,
+  Warehouse,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { categories } from "@/lib/catalog";
+import { categories, services } from "@/lib/catalog";
 import logo from "@/assets/logo.svg";
 
+const serviceIcons = {
+  cleaning: Sparkles,
+  contracting: Hammer,
+  warehousing: Warehouse,
+} as const;
 
 const nav = [
   { to: "/", label: "Home" },
@@ -34,11 +50,19 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                     <Link
                       to={n.to}
                       activeOptions={{ exact: false }}
-                      className="flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:font-medium data-[status=active]:text-foreground"
+                      className="flex items-center gap-1 text-sm text-navy/80 transition-colors hover:text-navy data-[status=active]:font-medium data-[status=active]:text-navy"
                     >
                       {n.label}
-                      <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                      <svg
+                        className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                     </Link>
 
@@ -77,8 +101,84 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                         {/* Footer links inside popover */}
                         <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs">
                           <span className="text-muted-foreground">Essential supplies & kits</span>
-                          <Link to="/products" className="font-semibold text-primary hover:text-primary/80 flex items-center gap-0.5">
+                          <Link
+                            to="/products"
+                            className="font-semibold text-primary hover:text-primary/80 flex items-center gap-0.5"
+                          >
                             View All Products <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              if (n.label === "Services") {
+                return (
+                  <div key={n.to} className="group relative py-4 -my-4 flex items-center">
+                    <Link
+                      to={n.to}
+                      activeOptions={{ exact: false }}
+                      className="flex items-center gap-1 text-sm text-navy/80 transition-colors hover:text-navy data-[status=active]:font-medium data-[status=active]:text-navy"
+                    >
+                      {n.label}
+                      <svg
+                        className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </Link>
+
+                    {/* Megamenu dropdown */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 hidden group-hover:block w-[400px] z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                      <div className="rounded-2xl border border-border bg-card p-4 shadow-xl transition-all duration-200">
+                        <div className="flex flex-col gap-y-1">
+                          {services.map((s) => {
+                            const Icon =
+                              serviceIcons[s.slug as keyof typeof serviceIcons] || Sparkles;
+                            return (
+                              <Link
+                                key={s.slug}
+                                to="/services"
+                                hash={s.slug}
+                                className="group/item flex items-center justify-between gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-secondary/60"
+                              >
+                                <div className="flex items-start gap-3 min-w-0 flex-1">
+                                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary transition-transform duration-200 group-hover/item:scale-110">
+                                    <Icon className="h-4.5 w-4.5" />
+                                  </span>
+                                  <div className="min-w-0 flex-1">
+                                    <span className="block text-sm font-semibold text-foreground transition-colors duration-200 truncate">
+                                      {s.name}
+                                    </span>
+                                    <span className="block mt-0.5 text-[11px] text-muted-foreground line-clamp-1 leading-normal">
+                                      {s.description}
+                                    </span>
+                                  </div>
+                                </div>
+                                <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground/30 transition-all duration-200 -translate-x-1.5 opacity-0 group-hover/item:translate-x-0 group-hover/item:opacity-100 group-hover/item:text-primary" />
+                              </Link>
+                            );
+                          })}
+                        </div>
+
+                        {/* Footer links inside popover */}
+                        <div className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                          <span className="text-muted-foreground">
+                            Expert field support & logistics
+                          </span>
+                          <Link
+                            to="/services"
+                            className="font-semibold text-primary hover:text-primary/80 flex items-center gap-0.5"
+                          >
+                            View All Services <ArrowRight className="h-3 w-3" />
                           </Link>
                         </div>
                       </div>
@@ -92,7 +192,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                   key={n.to}
                   to={n.to}
                   activeOptions={{ exact: n.to === "/" }}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:font-medium data-[status=active]:text-foreground"
+                  className="text-sm text-navy/80 transition-colors hover:text-navy data-[status=active]:font-medium data-[status=active]:text-navy"
                 >
                   {n.label}
                 </Link>
@@ -148,7 +248,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               <img src={logo} alt="NRM Supply" className="h-9 w-auto object-contain" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Dependable supplies and field services to support camp operations, field projects, and emergency response programs.
+              Dependable supplies and field services to support camp operations, field projects, and
+              emergency response programs.
             </p>
           </div>
 

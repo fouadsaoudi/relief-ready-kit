@@ -3,7 +3,13 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/lib/catalog";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Globe2, ArrowRight } from "lucide-react";
 
@@ -34,15 +40,18 @@ export const Route = createFileRoute("/products/")({
   component: Products,
 });
 
-const categoryStyles: Record<string, {
-  accent: string;
-  bg: string;
-  border: string;
-  glow: string;
-  iconBg: string;
-  iconColor: string;
-  span?: string;
-}> = {
+const categoryStyles: Record<
+  string,
+  {
+    accent: string;
+    bg: string;
+    border: string;
+    glow: string;
+    iconBg: string;
+    iconColor: string;
+    span?: string;
+  }
+> = {
   "food-items": {
     accent: "text-amber-600 dark:text-amber-400",
     bg: "group-hover:bg-amber-500/5",
@@ -152,7 +161,8 @@ function Products() {
           Products
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed font-light">
-          Explore NRM Supply's catalog of high-quality products, essential bulk supplies, and custom configurations. Click on any category to view specific items and technical specifications.
+          Explore NRM Supply's catalog of high-quality products, essential bulk supplies, and custom
+          configurations. Click on any category to view specific items and technical specifications.
         </p>
       </section>
 
@@ -185,13 +195,17 @@ function Products() {
                 />
 
                 {/* Glowing background hint on hover */}
-                <div className={`absolute -inset-px rounded-2xl bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${style.bg}`} />
+                <div
+                  className={`absolute -inset-px rounded-2xl bg-gradient-to-br from-transparent via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${style.bg}`}
+                />
 
                 <div className="relative flex h-full flex-col justify-between">
                   <div>
                     {/* Top row: Icon and featured tag */}
                     <div className="flex items-start justify-between">
-                      <span className={`grid h-12 w-12 place-items-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${style.iconBg} ${style.iconColor}`}>
+                      <span
+                        className={`grid h-12 w-12 place-items-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${style.iconBg} ${style.iconColor}`}
+                      >
                         <Icon className="h-6 w-6" />
                       </span>
                       {isFeatured && (
@@ -203,10 +217,14 @@ function Products() {
 
                     {/* Body info */}
                     <div className="mt-6">
-                      <h3 className={`font-display font-semibold transition-colors duration-300 group-hover:text-foreground ${isFeatured ? "text-2xl md:text-3xl" : "text-lg"}`}>
+                      <h3
+                        className={`font-display font-semibold transition-colors duration-300 group-hover:text-foreground ${isFeatured ? "text-2xl md:text-3xl" : "text-lg"}`}
+                      >
                         {c.name}
                       </h3>
-                      <p className={`mt-3 text-muted-foreground leading-relaxed ${isFeatured ? "text-base" : "line-clamp-3 text-sm"}`}>
+                      <p
+                        className={`mt-3 text-muted-foreground leading-relaxed ${isFeatured ? "text-base" : "line-clamp-3 text-sm"}`}
+                      >
                         {c.description}
                       </p>
                     </div>
@@ -217,27 +235,25 @@ function Products() {
                         Included Kits / Items
                       </p>
                       <div className="flex flex-wrap gap-1.5">
-                        {c.products ? (
-                          // If it has nested products, show them
-                          c.products.map((p) => (
-                            <span
-                              key={p.slug}
-                              className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground/80 border border-border/40 transition-colors duration-300 group-hover:bg-background group-hover:text-foreground"
-                            >
-                              {p.name}
-                            </span>
-                          ))
-                        ) : (
-                          // Otherwise show a few items
-                          c.items.slice(0, isFeatured ? 5 : 3).map((item) => (
-                            <span
-                              key={item}
-                              className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground/80 border border-border/40 transition-colors duration-300 group-hover:bg-background group-hover:text-foreground"
-                            >
-                              {item}
-                            </span>
-                          ))
-                        )}
+                        {c.products
+                          ? // If it has nested products, show them
+                            c.products.map((p) => (
+                              <span
+                                key={p.slug}
+                                className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground/80 border border-border/40 transition-colors duration-300 group-hover:bg-background group-hover:text-foreground"
+                              >
+                                {p.name}
+                              </span>
+                            ))
+                          : // Otherwise show a few items
+                            c.items.slice(0, isFeatured ? 5 : 3).map((item) => (
+                              <span
+                                key={item}
+                                className="inline-flex items-center rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground/80 border border-border/40 transition-colors duration-300 group-hover:bg-background group-hover:text-foreground"
+                              >
+                                {item}
+                              </span>
+                            ))}
                         {!c.products && c.items.length > (isFeatured ? 5 : 3) && (
                           <span className="inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground/50">
                             +{c.items.length - (isFeatured ? 5 : 3)} more
@@ -248,7 +264,9 @@ function Products() {
                   </div>
 
                   {/* Actions footer */}
-                  <div className={`mt-auto flex items-center justify-between gap-4 border-t border-border/50 pt-5 ${isFeatured ? "mt-10" : "mt-6"}`}>
+                  <div
+                    className={`mt-auto flex items-center justify-between gap-4 border-t border-border/50 pt-5 ${isFeatured ? "mt-10" : "mt-6"}`}
+                  >
                     <Link
                       to="/products/$categoryId"
                       params={{ categoryId: c.slug }}
@@ -288,7 +306,9 @@ function Products() {
                     Custom Sourcing
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
-                    Need specific products or custom configurations not listed in our standard catalog? Our global sourcing network can procure and deliver what your operation requires.
+                    Need specific products or custom configurations not listed in our standard
+                    catalog? Our global sourcing network can procure and deliver what your operation
+                    requires.
                   </p>
                 </div>
               </div>
@@ -309,7 +329,9 @@ function Products() {
       <Dialog open={isQuoteOpen} onOpenChange={setIsQuoteOpen}>
         <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-border bg-card p-6 sm:p-8">
           <DialogHeader className="border-b border-border/50 pb-4 mb-4">
-            <DialogTitle className="text-2xl font-bold font-display text-foreground">Request a Quote</DialogTitle>
+            <DialogTitle className="text-2xl font-bold font-display text-foreground">
+              Request a Quote
+            </DialogTitle>
             <DialogDescription className="text-muted-foreground mt-1.5">
               Share your requirements and our team will prepare a tailored quotation.
             </DialogDescription>

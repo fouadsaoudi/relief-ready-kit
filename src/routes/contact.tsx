@@ -63,7 +63,8 @@ function Contact() {
         <span className="text-sm font-medium text-primary">Contact</span>
         <h1 className="mt-3 text-4xl font-semibold md:text-5xl">Get in touch</h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          Get in touch with NRM Supply. Contact us directly for general, B2B, or humanitarian inquiries. We typically respond within one business day.
+          Get in touch with NRM Supply. Contact us directly for general, B2B, or humanitarian
+          inquiries. We typically respond within one business day.
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
@@ -72,20 +73,27 @@ function Contact() {
               { icon: Mail, label: "Email", value: "info@nrmsupply.example" },
               { icon: Phone, label: "Phone", value: "+961 70 616 333" },
             ].map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5">
+              <div
+                key={label}
+                className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5"
+              >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                    {label}
-                  </p>
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">{label}</p>
                   {label === "Email" ? (
-                    <a href={`mailto:${value}`} className="block mt-1 truncate font-medium hover:text-primary transition-colors">
+                    <a
+                      href={`mailto:${value}`}
+                      className="block mt-1 truncate font-medium hover:text-primary transition-colors"
+                    >
                       {value}
                     </a>
                   ) : label === "Phone" ? (
-                    <a href="tel:+96170616333" className="block mt-1 truncate font-medium hover:text-primary transition-colors">
+                    <a
+                      href="tel:+96170616333"
+                      className="block mt-1 truncate font-medium hover:text-primary transition-colors"
+                    >
                       {value}
                     </a>
                   ) : (
