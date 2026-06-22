@@ -71,11 +71,11 @@ function Home() {
               The Cover Story
             </span>
             <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl text-white">
-              Your Partner for every {" "}
-              <span className="text-primary">Mission</span>.
+              Your Partner for every <span className="text-primary">Mission</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 font-light">
-              Supporting humanitarian, development, and commercial operations with reliable supplies and operational services across Lebanon and the region.
+              Supporting humanitarian, development, and commercial operations with reliable supplies
+              and operational services across Lebanon and the region.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -235,7 +235,6 @@ function Home() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6 border-b border-border pb-6">
           <div className="max-w-2xl">
-            <span className="tag-pill">In this issue</span>
             <h2 className="mt-3 font-display text-4xl font-semibold md:text-5xl">Field Services</h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">

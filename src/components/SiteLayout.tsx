@@ -337,10 +337,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <Link to="/" className="flex items-center">
               <img src={logo} alt="NRM Supply" className="h-9 w-auto object-contain" />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Dependable supplies and field services to support camp operations, field projects, and
-              emergency response programs.
-            </p>
           </div>
 
           <div>

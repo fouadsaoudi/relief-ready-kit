@@ -134,6 +134,20 @@ function ProductItemDetail() {
             NRM Supply offers {matchedProduct.name.toLowerCase()} as part of our premium field kits
             and bulk supplies catalog. {matchedProduct.description}
           </p>
+
+          {/* Sourcing & Standards Info */}
+          <div className="mt-8 rounded-2xl bg-secondary/30 border border-border/60 p-6 flex gap-4 max-w-3xl">
+            <Info className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+            <div>
+              <h4 className="text-sm font-bold text-foreground">Sourcing & Standards</h4>
+              <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                All items can be tailored to meet the specific requirements, specifications, and
+                operational needs of each client. Product configurations, quantities, packaging,
+                branding, and technical specifications can be customized upon request to ensure
+                suitability for the intended application and project objectives.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -291,20 +305,6 @@ function ProductItemDetail() {
                 >
                   <Link to="/contact">Contact Sourcing Team</Link>
                 </Button>
-              </div>
-            </div>
-
-            {/* Sourcing & Standards Info */}
-            <div className="rounded-2xl bg-secondary/30 border border-border/60 p-6 flex gap-4">
-              <Info className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-              <div>
-                <h4 className="text-sm font-bold text-foreground">Sourcing & Standards</h4>
-                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  All items can be tailored to meet the specific requirements, specifications, and
-                  operational needs of each client. Product configurations, quantities, packaging,
-                  branding, and technical specifications can be customized upon request to ensure
-                  suitability for the intended application and project objectives.
-                </p>
               </div>
             </div>
           </div>

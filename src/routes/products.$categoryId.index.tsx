@@ -198,28 +198,8 @@ function CategoryProducts() {
         <div className="editorial-rule mt-4" />
       </section>
 
-      {/* Sourcing & Standards Warning for Food Items */}
-      {category.slug === "food-items" && (
-        <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5 md:p-6 backdrop-blur-sm">
-            <h4 className="font-display font-semibold text-amber-800 dark:text-amber-300 text-base flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
-              Sourcing & Standards
-            </h4>
-            <p className="mt-2 text-sm text-muted-foreground/90 leading-relaxed max-w-4xl">
-              All items can be tailored to meet the specific requirements, specifications, and
-              operational needs of each client. Product configurations, quantities, packaging,
-              branding, and technical specifications can be customized upon request to ensure
-              suitability for the intended application and project objectives.
-            </p>
-          </div>
-        </section>
-      )}
-
       {/* Header Info */}
-      <section
-        className={`mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8 ${category.slug === "food-items" ? "pt-6" : "pt-10"}`}
-      >
+      <section className="mx-auto max-w-7xl px-4 pb-6 pt-10 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
           <span
             className={`grid h-12 w-12 place-items-center rounded-xl ${style.iconBg} ${style.iconColor}`}
@@ -234,6 +214,22 @@ function CategoryProducts() {
           NRM Supply offers {category.name.toLowerCase()} for global field operations and B2B
           sourcing. {category.description}
         </p>
+      </section>
+
+      {/* Sourcing & Standards Info */}
+      <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-border/60 bg-secondary/30 p-5 md:p-6 backdrop-blur-sm">
+          <h4 className="font-display font-semibold text-foreground text-base flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+            Sourcing & Standards
+          </h4>
+          <p className="mt-2 text-sm text-muted-foreground/90 leading-relaxed max-w-4xl">
+            All items can be tailored to meet the specific requirements, specifications, and
+            operational needs of each client. Product configurations, quantities, packaging,
+            branding, and technical specifications can be customized upon request to ensure
+            suitability for the intended application and project objectives.
+          </p>
+        </div>
       </section>
 
       {/* Products list grid */}
