@@ -71,13 +71,11 @@ function Home() {
               The Cover Story
             </span>
             <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl text-white">
-              Dependable bulk supplies & field services, built for{" "}
-              <span className="text-primary">performance</span>.
+              Your Partner for every {" "}
+              <span className="text-primary">Mission</span>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 font-light">
-              NRM Supply provides dependable bulk supplies, custom kit assemblies, and operational
-              field services, built for high performance. As a global sourcing partner, we deliver
-              critical relief supplies and B2B procurement solutions anywhere, on any timeline.
+              Supporting humanitarian, development, and commercial operations with reliable supplies and operational services across Lebanon and the region.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
