@@ -374,9 +374,14 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
-                <a href="tel:+96170616333" className="hover:text-foreground">
-                  +961 70 616 333
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+96170616333" className="hover:text-foreground">
+                    +961 70 616 333
+                  </a>
+                  <a href="tel:+9710522293668" className="hover:text-foreground">
+                    +971 0522293668
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />

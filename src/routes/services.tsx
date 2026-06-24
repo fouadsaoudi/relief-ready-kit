@@ -153,32 +153,34 @@ function Services() {
 
   return (
     <SiteLayout>
-      {/* Hero Header */}
-      <section className="mx-auto max-w-7xl px-4 pt-20 pb-8 sm:px-6 lg:px-8">
-        <span className="tag-pill">Capabilities</span>
-        <h1 className="mt-4 text-4xl font-semibold md:text-5xl lg:text-6xl font-display">
-          Operational Field Services
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-          NRM Supply complements physical supplies with professional, field-proven operational
-          services to support base camps, emergency shelters, and logistics centers worldwide.
-        </p>
+      {/* Hero Header with Background Color */}
+      <section className="w-full bg-secondary/30 border-b border-border/50 py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <span className="tag-pill">Capabilities</span>
+          <h1 className="mt-4 text-4xl font-semibold md:text-5xl lg:text-6xl font-display text-foreground">
+            Operational Field Services
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+            NRM Supply complements physical supplies with professional, field-proven operational
+            services to support base camps, emergency shelters, and logistics centers worldwide.
+          </p>
 
-        {/* Quick Nav Anchors */}
-        <div className="flex flex-wrap gap-2 mt-10 border-b border-border/50 pb-6">
-          {services.map((s) => {
-            const Icon = icons[s.slug as keyof typeof icons] || Info;
-            return (
-              <a
-                key={s.slug}
-                href={`#${s.slug}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold hover:border-primary/40 hover:text-primary transition-all duration-300"
-              >
-                <Icon className="h-4 w-4" />
-                {s.name}
-              </a>
-            );
-          })}
+          {/* Quick Nav Anchors */}
+          <div className="flex flex-wrap gap-2 mt-10 border-b border-border/50 pb-6">
+            {services.map((s) => {
+              const Icon = icons[s.slug as keyof typeof icons] || Info;
+              return (
+                <a
+                  key={s.slug}
+                  href={`#${s.slug}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold hover:border-primary/40 hover:text-primary transition-all duration-300"
+                >
+                  <Icon className="h-4 w-4" />
+                  {s.name}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 

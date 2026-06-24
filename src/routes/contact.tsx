@@ -70,9 +70,9 @@ function Contact() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4">
             {[
-              { icon: Mail, label: "Email", value: "info@nrmsupply.example" },
-              { icon: Phone, label: "Phone", value: "+961 70 616 333" },
-            ].map(({ icon: Icon, label, value }) => (
+              { icon: Mail, label: "Email", values: ["info@nrmsupply.example"] },
+              { icon: Phone, label: "Phone", values: ["+961 70 616 333", "+971 0522293668"] },
+            ].map(({ icon: Icon, label, values }) => (
               <div
                 key={label}
                 className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5"
@@ -82,23 +82,35 @@ function Contact() {
                 </span>
                 <div className="min-w-0">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">{label}</p>
-                  {label === "Email" ? (
-                    <a
-                      href={`mailto:${value}`}
-                      className="block mt-1 truncate font-medium hover:text-primary transition-colors"
-                    >
-                      {value}
-                    </a>
-                  ) : label === "Phone" ? (
-                    <a
-                      href="tel:+96170616333"
-                      className="block mt-1 truncate font-medium hover:text-primary transition-colors"
-                    >
-                      {value}
-                    </a>
-                  ) : (
-                    <p className="mt-1 truncate font-medium">{value}</p>
-                  )}
+                  {values.map((val) => {
+                    if (label === "Email") {
+                      return (
+                        <a
+                          key={val}
+                          href={`mailto:${val}`}
+                          className="block mt-1 truncate font-medium hover:text-primary transition-colors"
+                        >
+                          {val}
+                        </a>
+                      );
+                    } else if (label === "Phone") {
+                      return (
+                        <a
+                          key={val}
+                          href={`tel:${val.replace(/\s+/g, "")}`}
+                          className="block mt-1 truncate font-medium hover:text-primary transition-colors"
+                        >
+                          {val}
+                        </a>
+                      );
+                    } else {
+                      return (
+                        <p key={val} className="mt-1 truncate font-medium">
+                          {val}
+                        </p>
+                      );
+                    }
+                  })}
                 </div>
               </div>
             ))}
