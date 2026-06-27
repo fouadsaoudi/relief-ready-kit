@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Globe2, ArrowRight } from "lucide-react";
+import productsBg from "@/assets/products_hero.jpg";
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
@@ -155,15 +156,65 @@ function Products() {
 
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
-        <span className="tag-pill">Catalog</span>
-        <h1 className="mt-4 text-4xl font-semibold md:text-5xl font-display text-foreground">
-          Products
-        </h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed font-light">
-          Explore NRM Supply's catalog of high-quality products, essential bulk supplies, and custom
-          configurations. Click on any category to view specific items and technical specifications.
-        </p>
+      {/* Hero Header with Background Image */}
+      <section className="relative  h-[85vh] w-full mb-10 overflow-hidden bg-zinc-950 min-h-[450px] flex items-center border-b border-border">
+        {/* Background Image & Gradient overlay */}
+        <img
+          src={productsBg}
+          alt="Our Products Sourcing"
+          className="absolute inset-0 h-full w-full object-cover z-0 object-center transition-all duration-300"
+          style={{ imageRendering: "-webkit-optimize-contrast" }}
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/35 lg:to-transparent z-10" />
+
+        {/* Overlaid Content Container */}
+        <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-white">
+          <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur border border-white/10">
+            Catalog
+          </span>
+          <h1 className="mt-4 text-4xl font-semibold md:text-5xl lg:text-6xl font-display text-white">
+            Our Products
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg md:text-xl text-zinc-300 leading-relaxed font-light">
+            Explore NRM Supply's catalog of high-quality products, essential bulk supplies, and
+            custom configurations. Click on any category below to view specific items and technical
+            specifications.
+          </p>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+        {/* Custom Sourcing Card */}
+        <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-border/80 bg-muted/30 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/5 md:col-span-1 lg:col-span-2">
+          <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div className="relative flex h-full flex-col justify-between md:flex-row md:items-center md:gap-8 lg:gap-12">
+            <div className="flex items-start gap-4">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <Globe2 className="h-6 w-6" />
+              </span>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                  Custom Sourcing
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
+                  Need specific products or custom configurations not listed in our standard
+                  catalog? Our global sourcing network can procure and deliver what your operation
+                  requires.
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 shrink-0 md:mt-0">
+              <Button
+                variant="outline"
+                className="w-full md:w-auto border-primary/30 hover:border-primary hover:bg-primary/5 hover:text-primary"
+                onClick={() => openQuote("custom")}
+              >
+                Inquire Sourcing
+              </Button>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
@@ -291,38 +342,6 @@ function Products() {
               </article>
             );
           })}
-
-          {/* Custom Sourcing Card */}
-          <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-border/80 bg-muted/30 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:bg-card hover:shadow-xl hover:shadow-primary/5 md:col-span-1 lg:col-span-2">
-            <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <div className="relative flex h-full flex-col justify-between md:flex-row md:items-center md:gap-8 lg:gap-12">
-              <div className="flex items-start gap-4">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <Globe2 className="h-6 w-6" />
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    Custom Sourcing
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xl">
-                    Need specific products or custom configurations not listed in our standard
-                    catalog? Our global sourcing network can procure and deliver what your operation
-                    requires.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 shrink-0 md:mt-0">
-                <Button
-                  variant="outline"
-                  className="w-full md:w-auto border-primary/30 hover:border-primary hover:bg-primary/5 hover:text-primary"
-                  onClick={() => openQuote("custom")}
-                >
-                  Inquire Sourcing
-                </Button>
-              </div>
-            </div>
-          </article>
         </div>
       </section>
 

@@ -53,7 +53,7 @@ function Home() {
   return (
     <SiteLayout>
       {/* Hero — wide background image spread edge-to-edge */}
-      <section className="relative w-full overflow-hidden bg-zinc-950 min-h-[580px] lg:min-h-[640px] flex items-center border-b border-border">
+      <section className="relative h-[80vh] w-full overflow-hidden bg-zinc-950 min-h-[580px] lg:min-h-[640px] flex items-center border-b border-border">
         {/* Background Image & Gradient overlay */}
         <img
           src={heroBg}
@@ -67,9 +67,6 @@ function Home() {
         {/* Overlaid Content Container aligned with page layout */}
         <div className="relative z-20 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-white">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur border border-white/10">
-              The Cover Story
-            </span>
             <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] md:text-6xl lg:text-7xl text-white">
               Your Partner for every <span className="text-primary">Mission</span>.
             </h1>

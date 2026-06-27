@@ -332,7 +332,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <main className="flex-1">{children}</main>
 
       <footer className="border-t border-border bg-secondary/40">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:px-8">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center">
               <img src={logo} alt="NRM Supply" className="h-9 w-auto object-contain" />
@@ -359,6 +359,19 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 <li key={c.slug}>
                   <Link to="/products" hash={c.slug} className="hover:text-foreground">
                     {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold">Our Services</h4>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link to="/services" hash={s.slug} className="hover:text-foreground">
+                    {s.name}
                   </Link>
                 </li>
               ))}
