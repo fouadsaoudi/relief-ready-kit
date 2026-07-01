@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Globe2, ArrowRight } from "lucide-react";
-import productsBg from "@/assets/products_hero.jpg";
+import productsBg from "@/assets/products_bg.jpg.webp";
+
 
 export const Route = createFileRoute("/products/")({
   head: () => ({

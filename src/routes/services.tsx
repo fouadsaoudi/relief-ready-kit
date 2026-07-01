@@ -21,7 +21,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { QuoteForm } from "@/components/QuoteForm";
-import servicesBg from "@/assets/services_hero.jpg";
+import servicesBg from "@/assets/services.jpg.webp";
+
 
 const icons = { cleaning: Sparkles, contracting: Hammer, warehousing: Warehouse } as const;
 
